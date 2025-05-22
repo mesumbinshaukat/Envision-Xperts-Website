@@ -7,7 +7,7 @@ ob_start();
 ?>
 
 <style>
-/* Animations */
+/* Base Animations */
 @keyframes float {
     0%, 100% { transform: translateY(0) rotate(0deg); }
     50% { transform: translateY(-10px) rotate(2deg); }
@@ -33,14 +33,9 @@ ob_start();
     to { transform: rotate(360deg) scale(1.1); }
 }
 
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes scaleIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
+@keyframes grid {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(24px); }
 }
 
 /* Animation Classes */
@@ -69,78 +64,176 @@ ob_start();
     will-change: transform;
 }
 
-.animate-fade-in {
+/* Responsive Enhancements */
+:root {
+    --container-padding: clamp(1rem, 5vw, 2rem);
+    --section-spacing: clamp(3rem, 8vw, 6rem);
+    --grid-gap: clamp(1rem, 3vw, 2rem);
+}
+
+.container {
+    width: min(100% - 2rem, 1200px);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    h1 { font-size: clamp(2rem, 5vw, 3rem); }
+    h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+    p { font-size: clamp(1rem, 2vw, 1.125rem); }
+}
+
+/* Responsive Grid */
+.grid {
+    display: grid;
+    gap: var(--grid-gap);
+}
+
+@media (min-width: 640px) {
+    .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+    .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Responsive Cards */
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content {
+    flex: 1;
+}
+
+/* Responsive Images */
+.responsive-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        inset: 0;
+        background: rgba(17, 24, 39, 0.95);
+        backdrop-filter: blur(10px);
+        transform: translateX(100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-menu.active {
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Touch Targets */
+@media (hover: none) {
+    .interactive-element {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Responsive Animations */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Enhanced Interactivity */
+.interactive-element {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive-element:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading State */
+.loading {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: opacity, transform;
+    transition: opacity 0.3s ease-in-out;
 }
 
-.animate-fade-in.is-visible {
+.loaded {
     opacity: 1;
-    transform: translateY(0);
 }
 
-.animate-scale-in {
+/* Enhanced Button States */
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
     opacity: 0;
-    transform: scale(0.95);
-    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: opacity, transform;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
 }
 
-.animate-scale-in.is-visible {
-    opacity: 1;
-    transform: scale(1);
+.btn:hover::after {
+    animation: ripple 1s ease-out;
 }
 
-/* Transitions */
-.transition-all {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 300ms;
-    will-change: transform, opacity, background-color;
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
 }
 
-.transition-transform {
-    transition-property: transform;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 300ms;
-    will-change: transform;
+/* Enhanced Card Hover Effects */
+.card {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.transition-opacity {
-    transition-property: opacity;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 300ms;
-    will-change: opacity;
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-/* Glassmorphism */
-.backdrop-blur-sm {
-    backdrop-filter: blur(8px);
+/* Improved Focus States */
+:focus-visible {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
 }
 
-.backdrop-blur-md {
-    backdrop-filter: blur(12px);
-}
-
-.backdrop-blur-lg {
-    backdrop-filter: blur(16px);
-}
-
-/* Gradients */
-.bg-gradient-mesh {
-    background-image: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-                      radial-gradient(circle at 0% 0%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
-}
-
-.bg-gradient-radial {
-    background-image: radial-gradient(circle at center, var(--tw-gradient-stops));
-}
-
-/* Custom Scrollbar */
+/* Enhanced Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -158,147 +251,279 @@ ob_start();
     background: rgba(59, 130, 246, 0.7);
 }
 
-/* Text Colors */
-.text-primary {
-    color: #3B82F6;
+/* Original Styles */
+.bg-dark-900 { background-color: #111827; }
+.bg-dark-800 { background-color: #1F2937; }
+.text-primary { color: #3B82F6; }
+.text-accent { color: #10B981; }
+.text-white { color: #FFFFFF; }
+.text-gray-300 { color: #D1D5DB; }
+.text-gray-400 { color: #9CA3AF; }
+
+.backdrop-blur-sm { backdrop-filter: blur(8px); }
+.backdrop-blur-md { backdrop-filter: blur(12px); }
+.backdrop-blur-lg { backdrop-filter: blur(16px); }
+
+.bg-gradient-mesh {
+    background-image: 
+        radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 0% 0%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
 }
 
-.text-accent {
-    color: #10B981;
+/* Enhanced Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
 }
 
-.text-white {
-    color: #FFFFFF;
-}
-
-.text-gray-300 {
-    color: #D1D5DB;
-}
-
-.text-gray-400 {
-    color: #9CA3AF;
-}
-
-/* Background Colors */
-.bg-dark-900 {
-    background-color: #111827;
-}
-
-.bg-dark-800 {
-    background-color: #1F2937;
-}
-
-/* Section Spacing */
-.section-spacing {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-}
-
-/* Card Styles */
-.card {
-    background-color: rgba(31, 41, 55, 0.5);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(75, 85, 99, 0.2);
-    border-radius: 1rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform, border-color, box-shadow;
-}
-
-.card:hover {
-    transform: translateY(-5px) scale(1.02);
-    border-color: rgba(59, 130, 246, 0.3);
-    box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
-}
-
-/* Enhanced Button Hover Effects */
-.btn-primary {
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform, box-shadow;
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px -5px rgba(59, 130, 246, 0.4);
-}
-
-.btn-primary::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.6s ease-out, height 0.6s ease-out;
-}
-
-.btn-primary:hover::after {
-    width: 300px;
-    height: 300px;
-}
-
-/* Enhanced Scroll Animations */
-.scroll-reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: opacity, transform;
-}
-
-.scroll-reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Enhanced Loading States */
-.loading {
-    position: relative;
-    overflow: hidden;
-}
-
-.loading::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.1),
-        transparent
-    );
-    animation: loading 1.5s infinite;
-}
-
-@keyframes loading {
-    0% { left: -100%; }
-    100% { left: 200%; }
-}
-
-/* Enhanced button animations */
-@keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-}
-
-@keyframes pulse-glow {
+@keyframes pulse-slow {
     0%, 100% { opacity: 0.5; transform: scale(1); }
     50% { opacity: 0.8; transform: scale(1.05); }
 }
 
-/* Add these to your existing styles */
-.group:hover .animate-shimmer {
-    animation: shimmer 1.5s infinite;
+@keyframes grid {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(24px); }
 }
 
-.group:hover .animate-pulse-glow {
-    animation: pulse-glow 2s infinite;
+/* Section Spacing */
+section {
+    padding-top: var(--section-spacing);
+    padding-bottom: var(--section-spacing);
+}
+
+section + section {
+    margin-top: 0;
+}
+
+/* Enhanced Transitions */
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+
+/* Refined Hover Effects */
+.hover-lift {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-2px);
+}
+
+/* Loading States */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    :root {
+        --section-spacing: clamp(2rem, 6vw, 4rem);
+    }
+}
+
+@media (min-width: 769px) {
+    :root {
+        --section-spacing: clamp(3rem, 8vw, 6rem);
+    }
+}
+
+/* 3D Transform Styles */
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+.transform-style-3d {
+    transform-style: preserve-3d;
+}
+
+.translate-z-50 {
+    transform: translateZ(50px);
+}
+
+.-translate-z-50 {
+    transform: translateZ(-50px);
+}
+
+.rotate-y-180 {
+    transform: rotateY(180deg);
+}
+
+/* Enhanced Animations */
+@keyframes float-slow {
+    0%, 100% { transform: translateY(0) rotateX(0) rotateY(0); }
+    25% { transform: translateY(-10px) rotateX(5deg) rotateY(5deg); }
+    75% { transform: translateY(10px) rotateX(-5deg) rotateY(-5deg); }
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.animate-float-slow {
+    animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-shimmer {
+    animation: shimmer 8s linear infinite;
+}
+
+/* Particle Animation */
+.particle-container {
+    position: absolute;
+    inset: 0;
+}
+
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(59, 130, 246, 0.3);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Interactive Hover Effects */
+.hover-scale {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Code Animation Styles */
+.code-animation {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.code-line {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+    line-height: 1.5;
+}
+
+.code-line:nth-child(1) { animation-delay: 0.1s; }
+.code-line:nth-child(2) { animation-delay: 0.2s; }
+.code-line:nth-child(3) { animation-delay: 0.3s; }
+.code-line:nth-child(4) { animation-delay: 0.4s; }
+.code-line:nth-child(5) { animation-delay: 0.5s; }
+.code-line:nth-child(6) { animation-delay: 0.6s; }
+.code-line:nth-child(7) { animation-delay: 0.7s; }
+.code-line:nth-child(8) { animation-delay: 0.8s; }
+.code-line:nth-child(9) { animation-delay: 0.9s; }
+.code-line:nth-child(10) { animation-delay: 1.0s; }
+.code-line:nth-child(11) { animation-delay: 1.1s; }
+.code-line:nth-child(12) { animation-delay: 1.2s; }
+.code-line:nth-child(13) { animation-delay: 1.3s; }
+.code-line:nth-child(14) { animation-delay: 1.4s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.animate-blink {
+    animation: blink 1s step-end infinite;
+}
+
+/* Tech Icon Styles */
+.tech-icon {
+    position: relative;
+    padding: 1rem;
+    background: rgba(59, 130, 246, 0.05);
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.tech-icon:hover {
+    transform: translateY(-2px);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.tech-icon::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 0.75rem;
+    padding: 1px;
+    background: linear-gradient(45deg, rgba(59, 130, 246, 0.5), rgba(16, 185, 129, 0.5));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-icon:hover::after {
+    opacity: 1;
+}
+
+/* Service Icon Styles */
+.service-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.service-icon:hover {
+    transform: translateY(-4px);
+}
+
+.service-icon::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: linear-gradient(45deg, rgba(59,130,246,0.1), rgba(16,185,129,0.1));
+    border-radius: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.service-icon:hover::after {
+    opacity: 1;
+}
+
+/* Enhanced Animation Keyframes */
+@keyframes pulse-slow {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+}
+
+.animate-shimmer {
+    animation: shimmer 8s linear infinite;
 }
 </style>
 
@@ -313,23 +538,16 @@ ob_start();
         <div class="absolute top-1/4 -right-20 w-96 h-96 bg-glow-purple/20 rounded-full blur-3xl animate-pulse-slow"></div>
         <div class="absolute -bottom-32 -left-20 w-96 h-96 bg-glow-blue/20 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
         
-        <!-- Interactive geometric shapes -->
-        <div class="absolute top-20 left-[20%] w-20 h-20 border border-primary-500/20 rounded-xl animate-float">
-            <div class="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-transparent"></div>
-            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" class="animate-draw" />
-            </svg>
-        </div>
-        <div class="absolute bottom-32 right-[15%] w-24 h-24 border border-accent-500/20 animate-morph">
-            <div class="absolute inset-0 bg-gradient-to-r from-accent-500/10 to-transparent"></div>
-            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                <circle cx="12" cy="12" r="10" class="animate-draw" />
-                <path d="M12 6v6l4 2" class="animate-draw" />
-            </svg>
-        </div>
+        <!-- Enhanced grid pattern with subtle animation -->
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.02)_1px,transparent_1px),linear-gradient(to_right,rgba(59,130,246,0.02)_1px,transparent_1px)] bg-[size:24px_24px] animate-[grid_20s_linear_infinite]"></div>
         
-        <!-- Enhanced grid pattern -->
-        <div class="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.02)_1px,transparent_1px),linear-gradient(to_right,rgba(59,130,246,0.02)_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <!-- Floating elements with refined animations -->
+        <div class="absolute top-1/4 left-1/4 w-32 h-32 border border-primary-500/10 rounded-full animate-float"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-40 h-40 border border-accent-500/10 rounded-full animate-float delay-1000"></div>
+        
+        <!-- Subtle gradient overlays -->
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-tl from-accent-500/5 to-transparent"></div>
     </div>
 
     <div class="container mx-auto px-4 relative z-10">
@@ -423,58 +641,121 @@ ob_start();
             <!-- Hero Visual with SVG Animation -->
             <div class="relative hidden lg:block">
                 <div class="relative w-full aspect-square">
-                    <!-- Main SVG Animation -->
-                    <svg class="w-full h-full" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Animated circles -->
-                        <circle cx="200" cy="200" r="150" class="animate-pulse-slow" stroke="url(#gradient1)" stroke-width="2" fill="none"/>
-                        <circle cx="200" cy="200" r="100" class="animate-pulse-slow delay-300" stroke="url(#gradient2)" stroke-width="2" fill="none"/>
-                        <circle cx="200" cy="200" r="50" class="animate-pulse-slow delay-700" stroke="url(#gradient3)" stroke-width="2" fill="none"/>
-                        
-                        <!-- Animated paths -->
-                        <path d="M200 50 L200 350" class="animate-draw" stroke="url(#gradient4)" stroke-width="2"/>
-                        <path d="M50 200 L350 200" class="animate-draw delay-500" stroke="url(#gradient4)" stroke-width="2"/>
-                        
-                        <!-- Floating elements -->
-                        <g class="animate-float">
-                            <circle cx="200" cy="100" r="10" fill="url(#gradient5)"/>
-                            <circle cx="300" cy="200" r="10" fill="url(#gradient5)"/>
-                            <circle cx="200" cy="300" r="10" fill="url(#gradient5)"/>
-                            <circle cx="100" cy="200" r="10" fill="url(#gradient5)"/>
-                        </g>
-                        
-                        <!-- Gradients -->
-                        <defs>
-                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#10B981" stop-opacity="0.5"/>
-                                <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.5"/>
-                            </linearGradient>
-                            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#10B981" stop-opacity="0.3"/>
-                                <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.3"/>
-                            </linearGradient>
-                            <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#10B981" stop-opacity="0.2"/>
-                                <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.2"/>
-                            </linearGradient>
-                            <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#10B981"/>
-                                <stop offset="100%" stop-color="#3B82F6"/>
-                            </linearGradient>
-                            <linearGradient id="gradient5" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#10B981"/>
-                                <stop offset="100%" stop-color="#3B82F6"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
+                    <!-- Interactive 3D Animation Container -->
+                    <div class="absolute inset-0 perspective-1000">
+                        <!-- Animated Cube -->
+                        <div class="relative w-full h-full transform-style-3d animate-float-slow">
+                            <!-- Front Face -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-accent-500/10 rounded-2xl backdrop-blur-sm border border-primary-500/20 transform translate-z-50 transition-all duration-500 hover:scale-105">
+                                <!-- Service Icons Animation -->
+                                <div class="absolute inset-0 p-8 flex flex-col items-center justify-center space-y-8">
+                                    <!-- Web Development Icon -->
+                                    <div class="service-icon group">
+                                        <div class="relative w-20 h-20 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-2xl flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary-500/20">
+                                        <div class="relative w-16 h-16 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-xl flex items-center justify-center transform transition-all duration-300 group-hover:scale-110">
+                                            <svg class="w-8 h-8 text-primary-400 group-hover:text-primary-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                                            </svg>
+                                            <div class="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-accent-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                        </div>
+                                        <span class="mt-2 text-sm text-primary-400 group-hover:text-primary-300 transition-colors">Web Development</span>
+                                    </div>
+
+                                    <!-- Mobile Apps Icon -->
+                                    <div class="service-icon group">
+                                        <div class="relative w-16 h-16 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-xl flex items-center justify-center transform transition-all duration-300 group-hover:scale-110">
+                                            <svg class="w-8 h-8 text-accent-400 group-hover:text-accent-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                                            </svg>
+                                            <div class="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-accent-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                        </div>
+                                        <span class="mt-2 text-sm text-accent-400 group-hover:text-accent-300 transition-colors">Mobile Applications</span>
+                                    </div>
+
+                                    <!-- Cloud Solutions Icon -->
+                                    <div class="service-icon group">
+                                        <div class="relative w-16 h-16 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-xl flex items-center justify-center transform transition-all duration-300 group-hover:scale-110">
+                                            <svg class="w-8 h-8 text-primary-400 group-hover:text-primary-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+                                            </svg>
+                                            <div class="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-accent-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                        </div>
+                                        <span class="mt-2 text-sm text-primary-400 group-hover:text-primary-300 transition-colors">Cloud Solutions</span>
+                                    </div>
+                                </div>
+
+                                <!-- Animated Background Elements -->
+                                <div class="absolute inset-0 overflow-hidden">
+                                    <!-- Grid Pattern -->
+                                    <div class="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(to_right,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+                                    
+                                    <!-- Glowing Orbs -->
+                                    <div class="absolute top-1/4 -right-10 w-40 h-40 bg-primary-500/10 rounded-full blur-2xl animate-pulse-slow"></div>
+                                    <div class="absolute bottom-1/4 -left-10 w-40 h-40 bg-accent-500/10 rounded-full blur-2xl animate-pulse-slow delay-1000"></div>
+                                </div>
+
+                                <!-- Shimmer Effect -->
+                                <div class="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(59,130,246,0.05)_50%,transparent_75%)] bg-[length:250%_250%] animate-shimmer"></div>
+                            </div>
+                            
+                            <!-- Back Face -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-accent-500/10 to-primary-500/10 rounded-2xl backdrop-blur-sm border border-accent-500/20 transform -translate-z-50 rotate-y-180 transition-all duration-500 hover:scale-105">
+                                <!-- Tech Stack Icons -->
+                                <div class="absolute inset-0 p-6 flex flex-wrap gap-4 items-center justify-center">
+                                    <div class="tech-icon group">
+                                        <svg class="w-8 h-8 text-primary-400 group-hover:text-primary-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                                        </svg>
+                                    </div>
+                                    <div class="tech-icon group">
+                                        <svg class="w-8 h-8 text-accent-400 group-hover:text-accent-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="tech-icon group">
+                                        <svg class="w-8 h-8 text-primary-400 group-hover:text-primary-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(16,185,129,0.05)_50%,transparent_75%)] bg-[length:250%_250%] animate-shimmer"></div>
+                            </div>
+                            
+                            <!-- Connecting Lines -->
+                            <div class="absolute inset-0">
+                                <div class="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-primary-500/20 to-transparent"></div>
+                                <div class="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-accent-500/20 to-transparent"></div>
+                                <div class="absolute top-0 left-0 h-px w-full bg-gradient-to-r from-primary-500/20 to-transparent"></div>
+                                <div class="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-accent-500/20 to-transparent"></div>
+                            </div>
+                            
+                            <!-- Floating Elements -->
+                            <div class="absolute top-1/4 left-1/4 w-16 h-16 bg-primary-500/5 rounded-full animate-float delay-100">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-primary-400/50" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-1/4 right-1/4 w-20 h-20 bg-accent-500/5 rounded-full animate-float delay-200">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <svg class="w-10 h-10 text-accent-400/50" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            
+                            <!-- Interactive Particles -->
+                            <div class="absolute inset-0 overflow-hidden">
+                                <div class="particle-container"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Glow Effects -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-accent-500/10 rounded-2xl blur-3xl opacity-50 animate-pulse-slow"></div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Enhanced scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div class="w-6 h-10 border-2 border-primary-500/20 rounded-full relative">
-            <div class="w-2 h-2 bg-primary-500 rounded-full absolute left-1/2 top-2 -translate-x-1/2 animate-bounce"></div>
         </div>
     </div>
 </section>
@@ -974,51 +1255,77 @@ document.addEventListener('DOMContentLoaded', function() {
         counterObserver.observe(counter);
     });
 
-    // Smooth scroll with enhanced behavior
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
+    // Responsive Navigation
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
         });
-    });
+    }
 
-    // Enhanced hover effects for cards
-    document.querySelectorAll('.card').forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px) scale(1.02)';
-        });
+    // Particle Animation
+    const container = document.querySelector('.particle-container');
+    const particleCount = 20;
+    
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
         
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
+        // Random position
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        
+        // Random animation
+        particle.style.animation = `float ${5 + Math.random() * 5}s ease-in-out infinite`;
+        particle.style.animationDelay = `${Math.random() * 5}s`;
+        
+        container.appendChild(particle);
+    }
+    
+    // Interactive rotation on mouse move
+    const cube = document.querySelector('.transform-style-3d');
+    let isHovering = false;
+    
+    cube.addEventListener('mouseenter', () => {
+        isHovering = true;
     });
+    
+    cube.addEventListener('mouseleave', () => {
+        isHovering = false;
+    });
+    
+    cube.addEventListener('mousemove', (e) => {
+        if (!isHovering) return;
+        
+        const rect = cube.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const y = (e.clientY - rect.top) / rect.height;
+        
+        const rotateX = (y - 0.5) * 20;
+        const rotateY = (x - 0.5) * 20;
+        
+        cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+});
 
-    // Parallax effect for background elements
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        document.querySelectorAll('.parallax').forEach(element => {
-            const speed = element.dataset.speed || 0.5;
-            element.style.transform = `translateY(${scrolled * speed}px)`;
-        });
-    });
-
-    // Enhanced button hover effects
-    document.querySelectorAll('.btn-primary').forEach(button => {
-        button.addEventListener('mouseenter', function(e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            this.style.setProperty('--x', `${x}px`);
-            this.style.setProperty('--y', `${y}px`);
-        });
-    });
+// Add cursor effect to code animation
+document.addEventListener('DOMContentLoaded', function() {
+    const codeAnimation = document.querySelector('.code-animation');
+    if (codeAnimation) {
+        const cursor = document.createElement('div');
+        cursor.className = 'absolute w-2 h-4 bg-primary-400/50 animate-blink';
+        codeAnimation.appendChild(cursor);
+        
+        // Position cursor at the end of the last line
+        const lastLine = codeAnimation.lastElementChild;
+        if (lastLine) {
+            cursor.style.top = `${lastLine.offsetTop + lastLine.offsetHeight}px`;
+            cursor.style.left = `${lastLine.offsetLeft + lastLine.offsetWidth}px`;
+        }
+    }
 });
 </script>
 
