@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     const themeToggle = document.getElementById('theme-toggle');
+    const mobileServicesToggle = document.getElementById('mobile-services-toggle');
+    const mobileServicesMenu = document.getElementById('mobile-services-menu');
 
     if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', () => {
@@ -16,6 +18,15 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 mobileMenu.classList.toggle('mobile-menu-enter-active');
             }, 10);
+        });
+    }
+
+    // Mobile services dropdown toggle
+    if (mobileServicesToggle && mobileServicesMenu) {
+        mobileServicesToggle.addEventListener('click', () => {
+            mobileServicesMenu.classList.toggle('hidden');
+            const arrow = mobileServicesToggle.querySelector('svg');
+            arrow.style.transform = mobileServicesMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
         });
     }
 

@@ -72,69 +72,7 @@ $pageTitle = isset($pageTitle) ? $pageTitle . ' | EnvisionXperts' : 'EnvisionXpe
 
     <div id="app" class="flex flex-col min-h-screen transition-all duration-500">
         <!-- Header & Navigation -->
-        <header id="main-header" class="fixed top-0 left-0 right-0 bg-slate-900/90 backdrop-blur-md z-40 transition-all duration-300 border-b border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <nav class="flex justify-between items-center py-4">
-                    <!-- Logo -->
-                    <div class="flex items-center space-x-2 animate-on-scroll">
-                        <div class="text-blue-500 text-3xl">
-                            <i class="fas fa-cube rotate-12 transform inline-block"></i>
-                        </div>
-                        <a href="/" class="text-xl md:text-2xl font-bold text-white tracking-tight relative overflow-hidden group">
-                            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-600">
-                                EnvisionXperts
-                            </span>
-                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                    </div>
-                    
-                    <!-- Desktop Navigation -->
-                    <div class="hidden md:flex items-center space-x-8">
-                        <a href="/" class="nav-link">Home</a>
-                        <a href="/services" class="nav-link">Services</a>
-                        <a href="/products" class="nav-link">Products</a>
-                        <a href="/about" class="nav-link">About</a>
-                        <a href="/contact" class="nav-link">Contact</a>
-                        <a href="/get-started" class="nav-button">
-                            Get Started
-                            <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
-                        </a>
-                    </div>
-                    
-                    <!-- Mobile Menu Button -->
-                    <button id="mobile-menu-button" class="md:hidden text-gray-100 focus:outline-none" aria-label="Toggle navigation menu">
-                        <div class="burger-icon">
-                            <span class="burger-line"></span>
-                            <span class="burger-line"></span>
-                            <span class="burger-line"></span>
-                        </div>
-                    </button>
-                </nav>
-            </div>
-            
-            <!-- Mobile Navigation -->
-            <div id="mobile-menu" class="md:hidden fixed inset-0 bg-slate-950/98 backdrop-blur-lg z-50 transform translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-center items-center">
-                <button id="close-mobile-menu" class="absolute top-6 right-6 text-2xl text-gray-400 hover:text-white">
-                    <i class="fas fa-times"></i>
-                </button>
-                <nav class="flex flex-col items-center space-y-8 text-xl">
-                    <a href="/" class="mobile-nav-link">Home</a>
-                    <a href="/services" class="mobile-nav-link">Services</a>
-                    <a href="/products" class="mobile-nav-link">Products</a>
-                    <a href="/about" class="mobile-nav-link">About</a>
-                    <a href="/contact" class="mobile-nav-link">Contact</a>
-                    <a href="/get-started" class="mobile-nav-button mt-4">
-                        Get Started
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </nav>
-                <div class="absolute bottom-10 flex space-x-6 text-xl">
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-        </header>
+        <?php include __DIR__ . '/layout/navbar.php'; ?>
         
         <!-- Main Content -->
         <main class="flex-grow pt-24 pb-16">

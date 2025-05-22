@@ -33,7 +33,15 @@ switch ($request_uri) {
     case '/services':
         $title = "Services - EnvisionXperts";
         ob_start();
-        require __DIR__ . '/../src/Templates/services.php';
+        require __DIR__ . '/../src/Templates/services/index.php';
+        $content = ob_get_clean();
+        require __DIR__ . '/../src/Templates/layout/base.php';
+        break;
+        
+    case '/services/web-development':
+        $title = "Web Development Services - EnvisionXperts";
+        ob_start();
+        require __DIR__ . '/../src/Templates/services/web-development.php';
         $content = ob_get_clean();
         require __DIR__ . '/../src/Templates/layout/base.php';
         break;
