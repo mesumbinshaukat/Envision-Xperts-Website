@@ -479,12 +479,12 @@ section + section {
     opacity: 1;
 }
 
-/* Service Icon Styles */
+/* Enhanced Service Icon Styles */
 .service-icon {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
 }
 
@@ -499,7 +499,7 @@ section + section {
     background: linear-gradient(45deg, rgba(59,130,246,0.1), rgba(16,185,129,0.1));
     border-radius: 1rem;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease;
     z-index: -1;
 }
 
@@ -508,18 +508,32 @@ section + section {
 }
 
 /* Enhanced Animation Keyframes */
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+}
+
 @keyframes pulse-slow {
     0%, 100% { opacity: 0.5; transform: scale(1); }
     50% { opacity: 0.8; transform: scale(1.05); }
 }
 
-@keyframes shimmer {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
+@keyframes grid {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(24px); }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
 }
 
 .animate-pulse-slow {
     animation: pulse-slow 4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
 }
 
 .animate-shimmer {
@@ -647,77 +661,128 @@ section + section {
                         <div class="relative w-full h-full transform-style-3d animate-float-slow">
                             <!-- Front Face -->
                             <div class="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-accent-500/10 rounded-2xl backdrop-blur-sm border border-primary-500/20 transform translate-z-50 transition-all duration-500 hover:scale-105">
-                                <!-- Service Icons Animation -->
-                                <div class="absolute inset-0 p-8 flex flex-col items-center justify-center space-y-8">
-                                    <!-- Web Development Icon -->
+                                <!-- Interactive Particles -->
+                                <div class="absolute inset-0 overflow-hidden">
+                                    <!-- Enhanced Grid Pattern -->
+                                    <div class="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(to_right,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:24px_24px] animate-[grid_20s_linear_infinite]"></div>
+                                    
+                                    <!-- Animated Border Lines -->
+                                    <div class="absolute inset-0">
+                                        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-500/30 to-transparent animate-[shimmer_3s_linear_infinite]"></div>
+                                        <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent-500/30 to-transparent animate-[shimmer_3s_linear_infinite]"></div>
+                                        <div class="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-primary-500/30 to-transparent animate-[shimmer_3s_linear_infinite]"></div>
+                                        <div class="absolute right-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-accent-500/30 to-transparent animate-[shimmer_3s_linear_infinite]"></div>
+                                    </div>
+                                    
+                                    <!-- Enhanced Floating Elements -->
+                                    <div class="absolute top-1/4 left-1/4 w-32 h-32 border-2 border-primary-500/20 rounded-full animate-spin-slow">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-transparent rounded-full"></div>
+                                    </div>
+                                    <div class="absolute bottom-1/4 right-1/4 w-40 h-40 border-2 border-accent-500/20 rounded-full animate-spin-slow" style="animation-delay: -10s">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-accent-500/10 to-transparent rounded-full"></div>
+                                    </div>
+                                    
+                                    <!-- Enhanced Decorative Elements -->
+                                    <div class="absolute top-1/4 right-1/4 w-24 h-24 bg-gradient-to-br from-primary-500/10 to-accent-500/10 rounded-full animate-float">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-accent-500/5 rounded-full animate-pulse-slow"></div>
+                                    </div>
+                                    <div class="absolute bottom-1/4 left-1/4 w-28 h-28 bg-gradient-to-br from-accent-500/10 to-primary-500/10 rounded-full animate-float" style="animation-delay: -2s">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-accent-500/5 to-primary-500/5 rounded-full animate-pulse-slow"></div>
+                                    </div>
+                                    
+                                    <!-- Enhanced Corner Accents -->
+                                    <div class="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-primary-500/20 rounded-tl-2xl">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent rounded-tl-2xl"></div>
+                                    </div>
+                                    <div class="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-primary-500/20 rounded-tr-2xl">
+                                        <div class="absolute inset-0 bg-gradient-to-bl from-primary-500/5 to-transparent rounded-tr-2xl"></div>
+                                    </div>
+                                    <div class="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-primary-500/20 rounded-bl-2xl">
+                                        <div class="absolute inset-0 bg-gradient-to-tr from-primary-500/5 to-transparent rounded-bl-2xl"></div>
+                                    </div>
+                                    <div class="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-primary-500/20 rounded-br-2xl">
+                                        <div class="absolute inset-0 bg-gradient-to-tl from-primary-500/5 to-transparent rounded-br-2xl"></div>
+                                    </div>
+                                    
+                                    <!-- Enhanced Glowing Orbs -->
+                                    <div class="absolute top-1/3 left-1/3 w-8 h-8 bg-primary-500/20 rounded-full blur-xl animate-pulse-slow">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-primary-500/30 to-transparent rounded-full animate-pulse-slow"></div>
+                                    </div>
+                                    <div class="absolute bottom-1/3 right-1/3 w-8 h-8 bg-accent-500/20 rounded-full blur-xl animate-pulse-slow" style="animation-delay: -1s">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-accent-500/30 to-transparent rounded-full animate-pulse-slow"></div>
+                                    </div>
+                                    
+                                    <!-- Additional Floating Particles -->
+                                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-primary-500/10 rounded-full animate-float" style="animation-delay: -0.5s"></div>
+                                    <div class="absolute top-1/3 right-1/3 w-3 h-3 bg-accent-500/10 rounded-full animate-float" style="animation-delay: -1.5s"></div>
+                                    <div class="absolute bottom-1/3 left-1/3 w-2 h-2 bg-primary-500/10 rounded-full animate-float" style="animation-delay: -2.5s"></div>
+                                    
+                                    <!-- Enhanced Shimmer Effect -->
+                                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -translate-x-full group-hover:translate-x-full"></div>
+                                </div>
+
+                                <!-- Main Content with Enhanced Effects -->
+                                <div class="absolute inset-0 p-8 flex items-center justify-center">
                                     <div class="service-icon group">
-                                        <div class="relative w-20 h-20 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-2xl flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary-500/20">
-                                        <div class="relative w-16 h-16 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-xl flex items-center justify-center transform transition-all duration-300 group-hover:scale-110">
-                                            <svg class="w-8 h-8 text-primary-400 group-hover:text-primary-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <!-- Main Code Symbol with Enhanced Effects -->
+                                        <div class="relative w-32 h-32 flex items-center justify-center transform transition-all duration-500 group-hover:scale-110">
+                                            <div class="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-accent-500/10 rounded-full animate-pulse-slow"></div>
+                                            <svg class="w-20 h-20 text-primary-400 group-hover:text-primary-300 transition-colors relative z-10" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
                                             </svg>
-                                            <div class="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-accent-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                            <!-- Glowing Ring Effect -->
+                                            <div class="absolute inset-0 rounded-full border-2 border-primary-500/20 group-hover:border-primary-500/40 transition-all duration-500 animate-spin-slow"></div>
                                         </div>
-                                        <span class="mt-2 text-sm text-primary-400 group-hover:text-primary-300 transition-colors">Web Development</span>
-                                    </div>
-
-                                    <!-- Mobile Apps Icon -->
-                                    <div class="service-icon group">
-                                        <div class="relative w-16 h-16 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-xl flex items-center justify-center transform transition-all duration-300 group-hover:scale-110">
-                                            <svg class="w-8 h-8 text-accent-400 group-hover:text-accent-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                                            </svg>
-                                            <div class="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-accent-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                                        </div>
-                                        <span class="mt-2 text-sm text-accent-400 group-hover:text-accent-300 transition-colors">Mobile Applications</span>
-                                    </div>
-
-                                    <!-- Cloud Solutions Icon -->
-                                    <div class="service-icon group">
-                                        <div class="relative w-16 h-16 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-xl flex items-center justify-center transform transition-all duration-300 group-hover:scale-110">
-                                            <svg class="w-8 h-8 text-primary-400 group-hover:text-primary-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
-                                            </svg>
-                                            <div class="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-accent-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                                        </div>
-                                        <span class="mt-2 text-sm text-primary-400 group-hover:text-primary-300 transition-colors">Cloud Solutions</span>
                                     </div>
                                 </div>
-
-                                <!-- Animated Background Elements -->
-                                <div class="absolute inset-0 overflow-hidden">
-                                    <!-- Grid Pattern -->
-                                    <div class="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(to_right,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-                                    
-                                    <!-- Glowing Orbs -->
-                                    <div class="absolute top-1/4 -right-10 w-40 h-40 bg-primary-500/10 rounded-full blur-2xl animate-pulse-slow"></div>
-                                    <div class="absolute bottom-1/4 -left-10 w-40 h-40 bg-accent-500/10 rounded-full blur-2xl animate-pulse-slow delay-1000"></div>
-                                </div>
-
-                                <!-- Shimmer Effect -->
-                                <div class="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(59,130,246,0.05)_50%,transparent_75%)] bg-[length:250%_250%] animate-shimmer"></div>
                             </div>
                             
                             <!-- Back Face -->
                             <div class="absolute inset-0 bg-gradient-to-br from-accent-500/10 to-primary-500/10 rounded-2xl backdrop-blur-sm border border-accent-500/20 transform -translate-z-50 rotate-y-180 transition-all duration-500 hover:scale-105">
                                 <!-- Tech Stack Icons -->
-                                <div class="absolute inset-0 p-6 flex flex-wrap gap-4 items-center justify-center">
-                                    <div class="tech-icon group">
-                                        <svg class="w-8 h-8 text-primary-400 group-hover:text-primary-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                                        </svg>
+                                <div class="absolute inset-0 p-8 flex flex-wrap gap-8 items-center justify-center">
+                                    <!-- Web Development Icon -->
+                                    <div class="tech-icon group transform transition-all duration-500 hover:scale-110 hover:-translate-y-2">
+                                        <div class="w-24 h-24 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-2xl flex items-center justify-center p-4 backdrop-blur-sm border border-primary-500/20 group-hover:border-primary-500/40 transition-all duration-500">
+                                            <svg class="w-16 h-16 text-primary-400 group-hover:text-primary-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                                            </svg>
+                                        </div>
+                                        <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">Web Development</span>
                                     </div>
-                                    <div class="tech-icon group">
-                                        <svg class="w-8 h-8 text-accent-400 group-hover:text-accent-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                                        </svg>
+
+                                    <!-- Mobile Development Icon -->
+                                    <div class="tech-icon group transform transition-all duration-500 hover:scale-110 hover:-translate-y-2">
+                                        <div class="w-24 h-24 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-2xl flex items-center justify-center p-4 backdrop-blur-sm border border-primary-500/20 group-hover:border-primary-500/40 transition-all duration-500">
+                                            <svg class="w-16 h-16 text-primary-400 group-hover:text-primary-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">Mobile Apps</span>
                                     </div>
-                                    <div class="tech-icon group">
-                                        <svg class="w-8 h-8 text-primary-400 group-hover:text-primary-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
-                                        </svg>
+
+                                    <!-- Cloud Solutions Icon -->
+                                    <div class="tech-icon group transform transition-all duration-500 hover:scale-110 hover:-translate-y-2">
+                                        <div class="w-24 h-24 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-2xl flex items-center justify-center p-4 backdrop-blur-sm border border-primary-500/20 group-hover:border-primary-500/40 transition-all duration-500">
+                                            <svg class="w-16 h-16 text-primary-400 group-hover:text-primary-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">Cloud Solutions</span>
+                                    </div>
+
+                                    <!-- AI/ML Icon -->
+                                    <div class="tech-icon group transform transition-all duration-500 hover:scale-110 hover:-translate-y-2">
+                                        <div class="w-24 h-24 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-2xl flex items-center justify-center p-4 backdrop-blur-sm border border-primary-500/20 group-hover:border-primary-500/40 transition-all duration-500">
+                                            <svg class="w-16 h-16 text-primary-400 group-hover:text-primary-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">AI/ML</span>
                                     </div>
                                 </div>
+
+                                <!-- Enhanced Shimmer Effect -->
                                 <div class="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(16,185,129,0.05)_50%,transparent_75%)] bg-[length:250%_250%] animate-shimmer"></div>
                             </div>
                             
