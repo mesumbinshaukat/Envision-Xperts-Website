@@ -34,13 +34,13 @@
                                     <div class="mega-menu-section">
                                         <h5><i class="fas fa-globe me-2"></i>Web Development</h5>
                                         <ul class="mega-menu-list">
-                                            <li><a href="services.php#custom-php">Custom PHP Development</a></li>
-                                            <li><a href="services.php#cms-development">CMS Development</a></li>
-                                            <li><a href="services.php#ecommerce">eCommerce Solutions</a></li>
-                                            <li><a href="services.php#web-modernization">Web Modernization</a></li>
-                                            <li><a href="services.php#pwa">Progressive Web Apps</a></li>
-                                            <li><a href="services.php#api-development">API Development</a></li>
-                                            <li><a href="services.php#web-maintenance">Web Maintenance</a></li>
+                                            <li><a href="services/custom-php.php">Custom PHP Development</a></li>
+                                            <li><a href="services/cms-development.php">CMS Development</a></li>
+                                            <li><a href="services/ecommerce.php">eCommerce Solutions</a></li>
+                                            <li><a href="services/web-modernization.php">Web Modernization</a></li>
+                                            <li><a href="services/pwa.php">Progressive Web Apps</a></li>
+                                            <li><a href="services/api-development.php">API Development</a></li>
+                                            <li><a href="services/web-maintenance.php">Web Maintenance</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -50,9 +50,9 @@
                                     <div class="mega-menu-section">
                                         <h5><i class="fas fa-mobile-alt me-2"></i>Mobile Development</h5>
                                         <ul class="mega-menu-list">
-                                            <li><a href="services.php#cross-platform">Cross-Platform Apps</a></li>
-                                            <li><a href="services.php#native-apps">Native Development</a></li>
-                                            <li><a href="services.php#mobile-maintenance">App Maintenance</a></li>
+                                            <li><a href="services/cross-platform.php">Cross-Platform Apps</a></li>
+                                            <li><a href="services/native-apps.php">Native Development</a></li>
+                                            <li><a href="services/mobile-maintenance.php">App Maintenance</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -62,10 +62,10 @@
                                     <div class="mega-menu-section">
                                         <h5><i class="fas fa-cogs me-2"></i>Software Development</h5>
                                         <ul class="mega-menu-list">
-                                            <li><a href="services.php#enterprise-software">Enterprise Software</a></li>
-                                            <li><a href="services.php#saas-development">SaaS Development</a></li>
-                                            <li><a href="services.php#custom-applications">Custom Applications</a></li>
-                                            <li><a href="services.php#software-testing">Testing & QA</a></li>
+                                            <li><a href="services/enterprise-software.php">Enterprise Software</a></li>
+                                            <li><a href="services/saas-development.php">SaaS Development</a></li>
+                                            <li><a href="services/custom-applications.php">Custom Applications</a></li>
+                                            <li><a href="services/software-testing.php">Testing & QA</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -75,10 +75,10 @@
                                     <div class="mega-menu-section">
                                         <h5><i class="fas fa-sync-alt me-2"></i>Digital Transformation</h5>
                                         <ul class="mega-menu-list">
-                                            <li><a href="services.php#cloud-solutions">Cloud Solutions</a></li>
-                                            <li><a href="services.php#ai-ml">AI & Machine Learning</a></li>
-                                            <li><a href="services.php#process-automation">Process Automation</a></li>
-                                            <li><a href="services.php#system-migration">System Migration</a></li>
+                                            <li><a href="services/cloud-solutions.php">Cloud Solutions</a></li>
+                                            <li><a href="services/ai-ml.php">AI & Machine Learning</a></li>
+                                            <li><a href="services/process-automation.php">Process Automation</a></li>
+                                            <li><a href="services/system-migration.php">System Migration</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -88,9 +88,9 @@
                                     <div class="mega-menu-section">
                                         <h5><i class="fas fa-chart-line me-2"></i>IT Consulting</h5>
                                         <ul class="mega-menu-list">
-                                            <li><a href="services.php#technology-consulting">Technology Consulting</a></li>
-                                            <li><a href="services.php#project-management">Project Management</a></li>
-                                            <li><a href="services.php#staff-augmentation">Staff Augmentation</a></li>
+                                            <li><a href="services/technology-consulting.php">Technology Consulting</a></li>
+                                            <li><a href="services/project-management.php">Project Management</a></li>
+                                            <li><a href="services/staff-augmentation.php">Staff Augmentation</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -100,10 +100,10 @@
                                     <div class="mega-menu-section">
                                         <h5><i class="fas fa-search me-2"></i>Digital Marketing</h5>
                                         <ul class="mega-menu-list">
-                                            <li><a href="services.php#seo">Search Engine Optimization</a></li>
-                                            <li><a href="services.php#marketing-automation">Marketing Automation</a></li>
-                                            <li><a href="services.php#social-media">Social Media Integration</a></li>
-                                            <li><a href="services.php#content-subscription">Content Subscription</a></li>
+                                            <li><a href="services/seo.php">Search Engine Optimization</a></li>
+                                            <li><a href="services/marketing-automation.php">Marketing Automation</a></li>
+                                            <li><a href="services/social-media.php">Social Media Integration</a></li>
+                                            <li><a href="services/content-subscription.php">Content Subscription</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -113,9 +113,9 @@
                                     <div class="mega-menu-section">
                                         <h5><i class="fas fa-headset me-2"></i>Support & Maintenance</h5>
                                         <ul class="mega-menu-list">
-                                            <li><a href="services.php#website-maintenance">Website Maintenance</a></li>
-                                            <li><a href="services.php#managed-services">Managed IT Services</a></li>
-                                            <li><a href="services.php#technical-support">24/7 Technical Support</a></li>
+                                            <li><a href="services/website-maintenance.php">Website Maintenance</a></li>
+                                            <li><a href="services/managed-services.php">Managed IT Services</a></li>
+                                            <li><a href="services/technical-support.php">24/7 Technical Support</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -125,10 +125,10 @@
                                     <div class="mega-menu-section">
                                         <h5><i class="fas fa-industry me-2"></i>Industry Solutions</h5>
                                         <ul class="mega-menu-list">
-                                            <li><a href="services.php#healthcare">Healthcare Solutions</a></li>
-                                            <li><a href="services.php#real-estate">Real Estate Platforms</a></li>
-                                            <li><a href="services.php#elearning">eLearning Platforms</a></li>
-                                            <li><a href="services.php#financial-systems">Financial Systems</a></li>
+                                            <li><a href="services/healthcare.php">Healthcare Solutions</a></li>
+                                            <li><a href="services/real-estate.php">Real Estate Platforms</a></li>
+                                            <li><a href="services/elearning.php">eLearning Platforms</a></li>
+                                            <li><a href="services/financial-systems.php">Financial Systems</a></li>
                                         </ul>
                                     </div>
                                 </div>
