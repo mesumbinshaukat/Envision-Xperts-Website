@@ -21,6 +21,9 @@ session_start();
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo/WhatsApp Image 2025-08-11 at 22.46.05_44b837bc.jpg">
+    
+    <!-- Google reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=<?php echo getenv('RECAPTCHA_SITE_KEY') ?: '6LfjzfUrAAAAABXvB6CT8h6vvzzIrByBnS9BXJKP'; ?>"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -285,7 +288,9 @@ session_start();
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="contact-form-wrapper scroll-reveal scroll-reveal-scale" data-aos="fade-up">
-                        <div class="row g-4">
+                        <form class="contact-form" method="POST" action="process/contact.php">
+                            <input type="hidden" name="recaptcha_token" id="recaptcha_token">
+                            <div class="row g-4">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-lg" name="name" placeholder="Enter your full name" required>
@@ -312,6 +317,7 @@ session_start();
                                 </button>
                             </div>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -382,6 +388,11 @@ session_start();
     
     <!-- Custom JavaScript -->
     <script src="assets/js/main.js"></script>
+    
+    <!-- reCAPTCHA Site Key for JavaScript -->
+    <script>
+        window.RECAPTCHA_SITE_KEY = '<?php echo getenv('RECAPTCHA_SITE_KEY') ?: '6LfjzfUrAAAAABXvB6CT8h6vvzzIrByBnS9BXJKP'; ?>';
+    </script>
     
     <!-- Lottie Animation Initialization -->
     <script>

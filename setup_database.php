@@ -4,15 +4,61 @@
  * Run this file once to create the necessary database tables
  */
 
-// Database configuration
-$host = 'localhost';
-$dbname = 'envisionxperts';
-$username = 'root';
-$password = '';
+// Load environment variables
+function loadEnv($path) {
+    if (!file_exists($path)) {
+        return false;
+    }
+
+    $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        // Skip comments
+        if (strpos(trim($line), '#') === 0) {
+            continue;
+        }
+
+        // Parse key=value pairs
+        if (strpos($line, '=') !== false) {
+            list($key, $value) = explode('=', $line, 2);
+            $key = trim($key);
+            $value = trim($value);
+
+            // Remove quotes if present
+            if (preg_match('/^["\'](.*)["\']$/', $value, $matches)) {
+                $value = $matches[1];
+            }
+
+            $_ENV[$key] = $value;
+            putenv("$key=$value");
+        }
+    }
+    return true;
+}
+
+/**
+ * Get environment variable with optional default
+ */
+function env($key, $default = null) {
+    $value = getenv($key);
+    if ($value === false) {
+        $value = $_ENV[$key] ?? $default;
+    }
+    return $value;
+}
+
+// Load .env file
+loadEnv(__DIR__ . '/.env');
+
+// Database configuration from environment variables
+$host = env('DB_HOST');
+$dbname = env('DB_NAME');
+$username = env('DB_USER');
+$password = env('DB_PASS');
+$port = env('DB_PORT');
 
 try {
     // Create PDO connection
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     echo "<h2>Database Setup for EnvisionXperts</h2>";
@@ -47,6 +93,20 @@ try {
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
     
     echo "<p>✅ <strong>newsletter_subscribers</strong> table created/verified successfully</p>";
+    
+    // Create email_logs table
+    $pdo->exec("CREATE TABLE IF NOT EXISTS email_logs (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        event_type VARCHAR(50) NOT NULL,
+        event_data JSON,
+        ip_address VARCHAR(45),
+        user_agent TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        INDEX idx_event_type (event_type),
+        INDEX idx_created_at (created_at)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
+    
+    echo "<p>✅ <strong>email_logs</strong> table created/verified successfully</p>";
     
     // Insert sample data for testing
     try {
@@ -100,6 +160,21 @@ try {
     
     echo "<h4>newsletter_subscribers:</h4>";
     $result = $pdo->query("DESCRIBE newsletter_subscribers");
+    echo "<table border='1' style='border-collapse: collapse; margin: 10px 0;'>";
+    echo "<tr><th>Field</th><th>Type</th><th>Null</th><th>Key</th><th>Default</th></tr>";
+    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+        echo "<tr>";
+        echo "<td>{$row['Field']}</td>";
+        echo "<td>{$row['Type']}</td>";
+        echo "<td>{$row['Null']}</td>";
+        echo "<td>{$row['Key']}</td>";
+        echo "<td>{$row['Default']}</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+    
+    echo "<h4>email_logs:</h4>";
+    $result = $pdo->query("DESCRIBE email_logs");
     echo "<table border='1' style='border-collapse: collapse; margin: 10px 0;'>";
     echo "<tr><th>Field</th><th>Type</th><th>Null</th><th>Key</th><th>Default</th></tr>";
     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {

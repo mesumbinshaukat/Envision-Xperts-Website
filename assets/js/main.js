@@ -184,77 +184,93 @@ $(document).ready(function() {
         // Clear previous messages
         $form.find('.alert').remove();
         
-        // Get form data
-        var formData = new FormData(this);
-        
-        $.ajax({
-            url: $form.attr('action'),
-            type: 'POST',
-            data: formData,
-            processData: false,
-            contentType: false,
-            dataType: 'json',
-            success: function(response) {
-                if (response.success) {
-                    // Show success message
-                    var successAlert = '<div class="alert alert-success alert-dismissible fade show" role="alert">' +
-                        '<i class="fas fa-check-circle me-2"></i>' + response.message +
-                        '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>' +
-                        '</div>';
-                    $form.prepend(successAlert);
-                    
-                    // Reset form
-                    $form[0].reset();
-                    
-                    // Scroll to top of form
-                    if (!prefersReducedMotion) {
-                        $('html, body').animate({
-                            scrollTop: $form.offset().top - 100
-                        }, 500, 'easeOutCubic');
-                    } else {
-                        $('html, body').animate({
-                            scrollTop: $form.offset().top - 100
-                        }, 200);
-                    }
-                } else {
-                    // Show error message
-                    var errorAlert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
-                        '<i class="fas fa-exclamation-circle me-2"></i>' + response.message +
-                        '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>' +
-                        '</div>';
-                    $form.prepend(errorAlert);
-                    
-                    // Show validation errors if any
-                    if (response.errors && response.errors.length > 0) {
-                        var errorList = '<ul class="mt-2 mb-0">';
-                        response.errors.forEach(function(error) {
-                            errorList += '<li>' + error + '</li>';
-                        });
-                        errorList += '</ul>';
-                        $form.find('.alert-danger').append(errorList);
-                    }
-                }
-            },
-            error: function(xhr, status, error) {
-                var errorMessage = 'Sorry, there was an error sending your message. Please try again later.';
+        // Generate reCAPTCHA token
+        grecaptcha.ready(function() {
+            grecaptcha.execute(window.RECAPTCHA_SITE_KEY || '6LfjzfUrAAAAABXvB6CT8h6vvzzIrByBnS9BXJKP', {action: 'contact'}).then(function(token) {
+                // Set the token in the hidden field
+                $form.find('#recaptcha_token').val(token);
                 
-                try {
-                    var response = JSON.parse(xhr.responseText);
-                    if (response.message) {
-                        errorMessage = response.message;
-                    }
-                } catch(e) {}
+                // Get form data
+                var formData = new FormData($form[0]);
                 
+                $.ajax({
+                    url: $form.attr('action'),
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.success) {
+                            // Show success message
+                            var successAlert = '<div class="alert alert-success alert-dismissible fade show" role="alert">' +
+                                '<i class="fas fa-check-circle me-2"></i>' + response.message +
+                                '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>' +
+                                '</div>';
+                            $form.prepend(successAlert);
+                            
+                            // Reset form
+                            $form[0].reset();
+                            
+                            // Scroll to top of form
+                            if (!prefersReducedMotion) {
+                                $('html, body').animate({
+                                    scrollTop: $form.offset().top - 100
+                                }, 500, 'easeOutCubic');
+                            } else {
+                                $('html, body').animate({
+                                    scrollTop: $form.offset().top - 100
+                                }, 200);
+                            }
+                        } else {
+                            // Show error message
+                            var errorAlert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
+                                '<i class="fas fa-exclamation-circle me-2"></i>' + response.message +
+                                '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>' +
+                                '</div>';
+                            $form.prepend(errorAlert);
+                            
+                            // Show validation errors if any
+                            if (response.errors && response.errors.length > 0) {
+                                var errorList = '<ul class="mt-2 mb-0">';
+                                response.errors.forEach(function(error) {
+                                    errorList += '<li>' + error + '</li>';
+                                });
+                                errorList += '</ul>';
+                                $form.find('.alert-danger').append(errorList);
+                            }
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        var errorMessage = 'Sorry, there was an error sending your message. Please try again later.';
+                        
+                        try {
+                            var response = JSON.parse(xhr.responseText);
+                            if (response.message) {
+                                errorMessage = response.message;
+                            }
+                        } catch(e) {}
+                        
+                        var errorAlert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
+                            '<i class="fas fa-exclamation-circle me-2"></i>' + errorMessage +
+                            '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>' +
+                            '</div>';
+                        $form.prepend(errorAlert);
+                    },
+                    complete: function() {
+                        // Re-enable button and restore original text
+                        $btn.html(originalBtnText).prop('disabled', false);
+                    }
+                });
+            }).catch(function(error) {
+                console.error('reCAPTCHA error:', error);
                 var errorAlert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
-                    '<i class="fas fa-exclamation-circle me-2"></i>' + errorMessage +
+                    '<i class="fas fa-exclamation-circle me-2"></i>reCAPTCHA verification failed. Please try again.' +
                     '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>' +
                     '</div>';
                 $form.prepend(errorAlert);
-            },
-            complete: function() {
-                // Re-enable button and restore original text
                 $btn.html(originalBtnText).prop('disabled', false);
-            }
+            });
         });
     });
 

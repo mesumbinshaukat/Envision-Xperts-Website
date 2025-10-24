@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../config/database.php';
+require_once '../includes/database.php';
 
 // Set content type to JSON for AJAX requests
 header('Content-Type: application/json');

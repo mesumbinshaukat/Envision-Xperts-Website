@@ -16,6 +16,9 @@ session_start();
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="logo/WhatsApp Image 2025-08-11 at 22.46.05_44b837bc.jpg">
+    
+    <!-- Google reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=<?php echo getenv('RECAPTCHA_SITE_KEY') ?: '6LfjzfUrAAAAABXvB6CT8h6vvzzIrByBnS9BXJKP'; ?>"></script>
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
@@ -42,7 +45,7 @@ session_start();
                         <div class="service-icon"><i class="fas fa-phone"></i></div>
                         <h3>Sales & Inquiries</h3>
                         <p>Discuss your project goals, timelines, and budget with our solution consultants.</p>
-                        <p class="mb-1"><strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                        <p class="mb-1"><strong>Phone:</strong> <a href="tel:+923708528313">+92 370 8528313</a></p>
                         <p class="mb-0"><strong>Email:</strong> <a href="mailto:info@envisionxperts.com">info@envisionxperts.com</a></p>
                     </div>
                 </div>
@@ -51,7 +54,7 @@ session_start();
                         <div class="service-icon"><i class="fas fa-headset"></i></div>
                         <h3>Technical Support</h3>
                         <p>Existing client? Our 24/7 support team is ready to help with urgent issues.</p>
-                        <p class="mb-1"><strong>Support Desk:</strong> <a href="mailto:support@envisionxperts.com">support@envisionxperts.com</a></p>
+                        <p class="mb-1"><strong>Support Desk:</strong> <a href="mailto:support@envisionxperts.com">contact@envisionxperts.com</a></p>
                         <p class="mb-0"><strong>SLA:</strong> Critical: 2h • High: 4h • Normal: 1 business day</p>
                     </div>
                 </div>
@@ -60,7 +63,7 @@ session_start();
                         <div class="service-icon"><i class="fas fa-briefcase"></i></div>
                         <h3>Careers</h3>
                         <p>We're hiring engineers and designers who love building exceptional products.</p>
-                        <p class="mb-1"><strong>Careers:</strong> <a href="mailto:careers@envisionxperts.com">careers@envisionxperts.com</a></p>
+                        <p class="mb-1"><strong>Careers:</strong> <a href="mailto:careers@envisionxperts.com">hr@envisionxperts.com</a></p>
                         <p class="mb-0"><strong>Location:</strong> Remote-first</p>
                     </div>
                 </div>
@@ -83,6 +86,7 @@ session_start();
                         <h3 class="mb-3">Send us a message</h3>
                         <form class="contact-form" method="POST" action="process/contact.php">
                             <div class="row g-3">
+                                <input type="hidden" name="recaptcha_token" id="recaptcha_token">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label mb-2"><i class="fas fa-user me-2"></i>Your Name</label>
@@ -164,5 +168,10 @@ session_start();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="assets/js/main.js"></script>
+    
+    <!-- reCAPTCHA Site Key for JavaScript -->
+    <script>
+        window.RECAPTCHA_SITE_KEY = '<?php echo getenv('RECAPTCHA_SITE_KEY') ?: '6LfjzfUrAAAAABXvB6CT8h6vvzzIrByBnS9BXJKP'; ?>';
+    </script>
 </body>
 </html>
