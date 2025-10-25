@@ -184,9 +184,9 @@ try {
  * Send notification email to admin
  */
 function sendAdminNotification($name, $email, $subject, $message, $submissionId) {
-    $to = env('ADMIN_EMAIL', 'masumbinshaukat@gmail.com');
-    $fromEmail = env('FROM_EMAIL', 'no-reply@envisionxperts.com');
-    $fromName = env('FROM_NAME', 'EnvisionXperts');
+    $to = env('ADMIN_EMAIL');
+    $fromEmail = env('FROM_EMAIL');
+    $fromName = env('FROM_NAME');
 
     $emailSubject = "New Contact Form Submission: $subject";
 
