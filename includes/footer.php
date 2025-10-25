@@ -13,11 +13,9 @@
                         digital goals with innovative and scalable solutions.
                     </p>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.facebook.com/envisionxperts" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://pk.linkedin.com/company/envisionxperts" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/envisionxperts/" class="social-link"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -61,15 +59,15 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <strong>Address:</strong><br>
-                                123 Business Street, Suite 100<br>
-                                City, State 12345
+                                Shadam Town Karachi<br>
+                                
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
                             <div>
                                 <strong>Phone:</strong><br>
-                                <a href="tel:+1234567890">+1 (234) 567-890</a>
+                                <a href="tel:+923708528313"></a>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -83,8 +81,7 @@
                             <i class="fas fa-clock"></i>
                             <div>
                                 <strong>Hours:</strong><br>
-                                Mon - Fri: 9:00 AM - 6:00 PM<br>
-                                Sat: 10:00 AM - 4:00 PM
+                                Mon - Fri: 4:00 PM - 12:00 AM<br>
                             </div>
                         </div>
                     </div>
@@ -102,9 +99,9 @@
                             <p class="newsletter-description">Get the latest updates on technology trends and industry insights.</p>
                         </div>
                         <div class="col-lg-6">
-                            <form class="newsletter-form">
+                            <form class="newsletter-form" method="POST" action="process/newsletter.php">
                                 <div class="input-group">
-                                    <input type="email" class="form-control" placeholder="Enter your email" required>
+                                    <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
                                     <button class="btn btn-primary" type="submit">
                                         <i class="fas fa-paper-plane"></i> Subscribe
                                     </button>

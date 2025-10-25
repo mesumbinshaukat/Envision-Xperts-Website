@@ -15,7 +15,10 @@ session_start();
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="logo/envision-expert-logo-dark (1).png">
+    <link rel="icon" type="image/png" href="logo/WhatsApp Image 2025-08-11 at 22.46.05_44b837bc.jpg">
+    
+    <!-- Google reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=<?php echo getenv('RECAPTCHA_SITE_KEY') ?: '6LfjzfUrAAAAABXvB6CT8h6vvzzIrByBnS9BXJKP'; ?>"></script>
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
@@ -38,29 +41,29 @@ session_start();
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-4" data-aos="fade-up">
-                    <div class="service-card text-start h-100">
+                    <div class="service-card text-start h-100 scroll-reveal scroll-reveal-scale hover-glow">
                         <div class="service-icon"><i class="fas fa-phone"></i></div>
                         <h3>Sales & Inquiries</h3>
                         <p>Discuss your project goals, timelines, and budget with our solution consultants.</p>
-                        <p class="mb-1"><strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                        <p class="mb-1"><strong>Phone:</strong> <a href="tel:+923708528313">+92 370 8528313</a></p>
                         <p class="mb-0"><strong>Email:</strong> <a href="mailto:info@envisionxperts.com">info@envisionxperts.com</a></p>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card text-start h-100">
+                    <div class="service-card text-start h-100 scroll-reveal scroll-reveal-scale hover-glow">
                         <div class="service-icon"><i class="fas fa-headset"></i></div>
                         <h3>Technical Support</h3>
                         <p>Existing client? Our 24/7 support team is ready to help with urgent issues.</p>
-                        <p class="mb-1"><strong>Support Desk:</strong> <a href="mailto:support@envisionxperts.com">support@envisionxperts.com</a></p>
+                        <p class="mb-1"><strong>Support Desk:</strong> <a href="mailto:support@envisionxperts.com">contact@envisionxperts.com</a></p>
                         <p class="mb-0"><strong>SLA:</strong> Critical: 2h • High: 4h • Normal: 1 business day</p>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card text-start h-100">
+                    <div class="service-card text-start h-100 scroll-reveal scroll-reveal-scale hover-glow">
                         <div class="service-icon"><i class="fas fa-briefcase"></i></div>
                         <h3>Careers</h3>
-                        <p>We’re hiring engineers and designers who love building exceptional products.</p>
-                        <p class="mb-1"><strong>Careers:</strong> <a href="mailto:careers@envisionxperts.com">careers@envisionxperts.com</a></p>
+                        <p>We're hiring engineers and designers who love building exceptional products.</p>
+                        <p class="mb-1"><strong>Careers:</strong> <a href="mailto:careers@envisionxperts.com">hr@envisionxperts.com</a></p>
                         <p class="mb-0"><strong>Location:</strong> Remote-first</p>
                     </div>
                 </div>
@@ -73,30 +76,45 @@ session_start();
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-6" data-aos="fade-right">
-                    <div class="ratio ratio-16x9" style="border-radius:12px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.15);">
-                        <iframe src="https://www.google.com/maps?q=Business%20Street%20Suite%20100&output=embed" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="ratio ratio-16x9 scroll-reveal scroll-reveal-left hover-lift" style="border-radius:12px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.15);">
+                        <iframe src="https://www.google.com/maps?q=X354%2BMWF%20Shadman%20Town%2C%20Karachi&output=embed" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="EnvisionXperts Office Location"></iframe>
                     </div>
-                    <p class="mt-3 text-muted">We operate globally with a remote-first team. Meetings available virtually and on-site by appointment.</p>
+                    <p class="mt-3 text-muted scroll-reveal scroll-reveal-left">Office: X354+MWF Shadman Town, Karachi. Virtual and on‑site meetings available by appointment.</p>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
-                    <div class="contact-form-wrapper">
+                    <div class="contact-form-wrapper form-dark scroll-reveal scroll-reveal-right">
                         <h3 class="mb-3">Send us a message</h3>
                         <form class="contact-form" method="POST" action="process/contact.php">
                             <div class="row g-3">
+                                <input type="hidden" name="recaptcha_token" id="recaptcha_token">
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                                    <div class="form-group">
+                                        <label class="form-label mb-2"><i class="fas fa-user me-2"></i>Your Name</label>
+                                        <input type="text" class="form-control" name="name" placeholder="Enter your full name" required>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                                    <div class="form-group">
+                                        <label class="form-label mb-2"><i class="fas fa-envelope me-2"></i>Your Email</label>
+                                        <input type="email" class="form-control" name="email" placeholder="Enter your email address" required>
+                                    </div>
                                 </div>
                                 <div class="col-12">
-                                    <input type="text" class="form-control" name="subject" placeholder="How can we help?" required>
+                                    <div class="form-group">
+                                        <label class="form-label mb-2"><i class="fas fa-tag me-2"></i>Subject</label>
+                                        <input type="text" class="form-control" name="subject" placeholder="What can we help you with?" required>
+                                    </div>
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control" name="message" rows="6" placeholder="Tell us about your project, goals, timelines, and constraints" required></textarea>
+                                    <div class="form-group">
+                                        <label class="form-label mb-2"><i class="fas fa-comment me-2"></i>Your Message</label>
+                                        <textarea class="form-control" name="message" rows="6" placeholder="Tell us about your project, goals, timelines, and any specific requirements..." required></textarea>
+                                    </div>
                                 </div>
                                 <div class="col-12 text-end">
-                                    <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane me-2"></i>Send Message</button>
+                                    <button type="submit" class="btn btn-primary btn-lg hover-lift px-4 py-2">
+                                        <i class="fas fa-paper-plane me-2"></i>Send Message
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -111,13 +129,13 @@ session_start();
         <div class="container">
             <div class="row text-center mb-4">
                 <div class="col-12" data-aos="fade-up">
-                    <h2 class="section-title">Frequently Asked Questions</h2>
-                    <p class="section-subtitle">Quick answers about timelines, pricing, and collaboration</p>
+                    <h2 class="section-title scroll-reveal">Frequently Asked Questions</h2>
+                    <p class="section-subtitle scroll-reveal">Quick answers about timelines, pricing, and collaboration</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-10 mx-auto" data-aos="fade-up">
-                    <div class="accordion" id="faqAccordion">
+                    <div class="accordion scroll-reveal scroll-reveal-scale" id="faqAccordion">
                         <?php
                         $faqs = [
                             ['q' => 'How soon can you start?', 'a' => 'Most projects begin within 1-2 weeks after scoping and agreement. Urgent engagements are possible depending on availability.'],
@@ -126,7 +144,7 @@ session_start();
                             ['q' => 'Which industries do you serve?', 'a' => 'We partner with startups and enterprises across healthcare, finance, real estate, education, retail, and more.']
                         ];
                         foreach ($faqs as $i => $f): $id = 'faq'.($i+1); ?>
-                        <div class="accordion-item">
+                        <div class="accordion-item hover-lift">
                             <h2 class="accordion-header" id="heading<?= $id ?>">
                                 <button class="accordion-button <?= $i>0?'collapsed':'' ?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= $id ?>" aria-expanded="<?= $i===0?'true':'false' ?>" aria-controls="collapse<?= $id ?>">
                                     <?= $f['q'] ?>
@@ -150,5 +168,10 @@ session_start();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="assets/js/main.js"></script>
+    
+    <!-- reCAPTCHA Site Key for JavaScript -->
+    <script>
+        window.RECAPTCHA_SITE_KEY = '<?php echo getenv('RECAPTCHA_SITE_KEY') ?: '6LfjzfUrAAAAABXvB6CT8h6vvzzIrByBnS9BXJKP'; ?>';
+    </script>
 </body>
 </html>

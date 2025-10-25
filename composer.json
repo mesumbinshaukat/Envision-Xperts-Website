@@ -1,0 +1,7 @@
+{
+    "name": "mesum/envisionxperts.com",
+    "description": "Website for envision xperts (envisionxperts.com)",
+    "require": {
+        "phpmailer/phpmailer": "^7.0"
+    }
+}

@@ -16,7 +16,7 @@ session_start();
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="assets/css/style.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="logo/envision-expert-logo-dark (1).png">
+    <link rel="icon" type="image/png" href="logo/WhatsApp Image 2025-08-11 at 22.46.05_44b837bc.jpg">
 
     <script type="application/ld+json">
     {
@@ -42,7 +42,7 @@ session_start();
         <div class="container d-flex align-items-center" style="min-height: 60vh;">
             <div class="row w-100">
                 <div class="col-lg-8" data-aos="fade-up">
-                    <h1 class="hero-title"><span class="text-gradient">About</span> EnvisionXperts</h1>
+                    <h1 class="hero-title"><span class="text-gradient">About</span> Envision Xperts</h1>
                     <p class="hero-description mb-0">We are a results-driven PHP development company crafting secure, scalable, and modern digital products. From ideation to launch and beyond, we partner with you to accelerate growth.</p>
                 </div>
             </div>
@@ -54,41 +54,43 @@ session_start();
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6" data-aos="fade-right">
-                    <h2 class="section-title text-start">Who We Are</h2>
-                    <p class="about-description">EnvisionXperts is a team of seasoned engineers, product strategists, and UI/UX specialists dedicated to building high-performance digital products. We leverage core PHP and modern frameworks, cloud-native architectures, and battle-tested engineering practices to help companies move faster with confidence.</p>
-                    <p class="about-description">Our approach blends deep technical expertise with business-first thinking. We deliver value early and continuously, ensuring you get software that is maintainable, secure, and optimized for scale.</p>
+                    <h2 class="section-title text-start scroll-reveal scroll-reveal-left">Who We Are</h2>
+                    <p class="about-description scroll-reveal scroll-reveal-left">EnvisionXperts is a team of seasoned engineers, product strategists, and UI/UX specialists dedicated to building high-performance digital products. We leverage core PHP and modern frameworks, cloud-native architectures, and battle-tested engineering practices to help companies move faster with confidence.</p>
+                    <p class="about-description scroll-reveal scroll-reveal-left">Our approach blends deep technical expertise with business-first thinking. We deliver value early and continuously, ensuring you get software that is maintainable, secure, and optimized for scale.</p>
                     <div class="about-features">
-                        <div class="feature-item"><i class="fas fa-shield-alt"></i><span>Security-first engineering</span></div>
-                        <div class="feature-item"><i class="fas fa-gauge-high"></i><span>Performance and scalability by design</span></div>
-                        <div class="feature-item"><i class="fas fa-people-group"></i><span>Collaborative, transparent delivery</span></div>
-                        <div class="feature-item"><i class="fas fa-award"></i><span>Quality assured with rigorous testing</span></div>
+                        <div class="feature-item scroll-reveal scroll-reveal-left"><i class="fas fa-shield-alt"></i><span>Security-first engineering</span></div>
+                        <div class="feature-item scroll-reveal scroll-reveal-left"><i class="fas fa-gauge-high"></i><span>Performance and scalability by design</span></div>
+                        <div class="feature-item scroll-reveal scroll-reveal-left"><i class="fas fa-people-group"></i><span>Collaborative, transparent delivery</span></div>
+                        <div class="feature-item scroll-reveal scroll-reveal-left"><i class="fas fa-award"></i><span>Quality assured with rigorous testing</span></div>
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
-                    <div class="row g-4">
+                    <div class="about-stats scroll-reveal scroll-reveal-right">
+                        <div class="row g-4">
                         <div class="col-6">
-                            <div class="stat-card">
+                            <div class="stat-card hover-lift">
                                 <div class="stat-number" data-count="150">0</div>
                                 <div class="stat-label">Projects Delivered</div>
                             </div>
                         </div>
                         <div class="col-6">
-                            <div class="stat-card">
+                            <div class="stat-card hover-lift">
                                 <div class="stat-number" data-count="50">0</div>
                                 <div class="stat-label">Active Clients</div>
                             </div>
                         </div>
                         <div class="col-6">
-                            <div class="stat-card">
+                            <div class="stat-card hover-lift">
                                 <div class="stat-number" data-count="5">0</div>
                                 <div class="stat-label">Years in Business</div>
                             </div>
                         </div>
                         <div class="col-6">
-                            <div class="stat-card">
+                            <div class="stat-card hover-lift">
                                 <div class="stat-number" data-count="99">0</div>
                                 <div class="stat-label">% Client Satisfaction</div>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -101,20 +103,20 @@ session_start();
         <div class="container">
             <div class="row text-center mb-4">
                 <div class="col-12" data-aos="fade-up">
-                    <h2 class="section-title">Mission & Vision</h2>
-                    <p class="section-subtitle">Guiding principles that shape every project we deliver</p>
+                    <h2 class="section-title scroll-reveal">Mission & Vision</h2>
+                    <p class="section-subtitle scroll-reveal">Guiding principles that shape every project we deliver</p>
                 </div>
             </div>
             <div class="row g-4">
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card text-start">
+                    <div class="service-card text-start scroll-reveal scroll-reveal-scale hover-glow">
                         <div class="service-icon"><i class="fas fa-bullseye"></i></div>
                         <h3>Our Mission</h3>
                         <p>To empower businesses with reliable, secure, and high-performing PHP solutions that create measurable impact. We align technology with business outcomes through craftsmanship, agility, and a relentless focus on user value.</p>
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card text-start">
+                    <div class="service-card text-start scroll-reveal scroll-reveal-scale hover-glow">
                         <div class="service-icon"><i class="fas fa-eye"></i></div>
                         <h3>Our Vision</h3>
                         <p>To be the most trusted PHP engineering partner for forward-thinking companies worldwide—delivering innovation at speed without compromising quality or security.</p>
@@ -129,8 +131,8 @@ session_start();
         <div class="container">
             <div class="row text-center mb-4">
                 <div class="col-12" data-aos="fade-up">
-                    <h2 class="section-title">Core Values</h2>
-                    <p class="section-subtitle">What defines our culture and the products we build</p>
+                    <h2 class="section-title scroll-reveal">Core Values</h2>
+                    <p class="section-subtitle scroll-reveal">What defines our culture and the products we build</p>
                 </div>
             </div>
             <div class="row g-4">
@@ -145,7 +147,7 @@ session_start();
                 ];
                 foreach ($values as $i => $value): ?>
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="<?= ($i+1) * 100 ?>">
-                        <div class="service-card text-start">
+                        <div class="service-card text-start scroll-reveal scroll-reveal-scale hover-lift">
                             <div class="service-icon"><i class="fas <?= $value['icon'] ?>"></i></div>
                             <h3><?= $value['title'] ?></h3>
                             <p><?= $value['text'] ?></p>
@@ -161,8 +163,8 @@ session_start();
         <div class="container">
             <div class="row text-center mb-4">
                 <div class="col-12" data-aos="fade-up">
-                    <h2 class="section-title">Our Delivery Process</h2>
-                    <p class="section-subtitle">A predictable, transparent, and outcomes-focused lifecycle</p>
+                    <h2 class="section-title scroll-reveal">Our Delivery Process</h2>
+                    <p class="section-subtitle scroll-reveal">A predictable, transparent, and outcomes-focused lifecycle</p>
                 </div>
             </div>
             <div class="row g-4 align-items-stretch">
@@ -177,7 +179,7 @@ session_start();
                 ];
                 foreach ($steps as $i => $step): ?>
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="<?= ($i+1) * 100 ?>">
-                        <div class="service-card text-start h-100">
+                        <div class="service-card text-start h-100 scroll-reveal scroll-reveal-scale hover-glow">
                             <div class="service-icon"><i class="fas <?= $step['icon'] ?>"></i></div>
                             <h3><?= $step['title'] ?></h3>
                             <p class="mb-0"><?= $step['text'] ?></p>
@@ -193,10 +195,10 @@ session_start();
         <div class="container" data-aos="fade-up">
             <div class="d-lg-flex align-items-center justify-content-between">
                 <div>
-                    <h2 class="mb-2">Have a project in mind?</h2>
-                    <p class="mb-3">Let’s turn your idea into a reliable, scalable product. Get a free consultation today.</p>
+                    <h2 class="mb-2 scroll-reveal scroll-reveal-left">Have a project in mind?</h2>
+                    <p class="mb-3 scroll-reveal scroll-reveal-left">Let's turn your idea into a reliable, scalable product. Get a free consultation today.</p>
                 </div>
-                <a href="contact.php" class="btn btn-primary btn-lg"><i class="fas fa-message me-2"></i>Contact Us</a>
+                <a href="contact.php" class="btn btn-primary btn-lg hover-lift"><i class="fas fa-message me-2"></i>Contact Us</a>
             </div>
         </div>
     </section>
