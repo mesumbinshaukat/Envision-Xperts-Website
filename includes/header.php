@@ -24,6 +24,9 @@ $prefix = $isServices ? '../' : '';
                 <li class="nav-item">
                     <a class="nav-link" href="<?= $prefix ?>about.php">About</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= $prefix ?>team.php">Team</a>
+                </li>
                 
                 <!-- Services Mega Menu -->
                 <li class="nav-item dropdown position-static">

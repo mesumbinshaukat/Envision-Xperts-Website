@@ -40,16 +40,16 @@ session_start();
     <section class="py-5 bg-light">
         <div class="container">
             <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up">
                     <div class="service-card text-start h-100 scroll-reveal scroll-reveal-scale hover-glow">
                         <div class="service-icon"><i class="fas fa-phone"></i></div>
-                        <h3>Sales & Inquiries</h3>
+                        <h3>General Query</h3>
                         <p>Discuss your project goals, timelines, and budget with our solution consultants.</p>
                         <p class="mb-1"><strong>Phone:</strong> <a href="tel:+923708528313">+92 370 8528313</a></p>
                         <p class="mb-0"><strong>Email:</strong> <a href="mailto:info@envisionxperts.com">info@envisionxperts.com</a></p>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-card text-start h-100 scroll-reveal scroll-reveal-scale hover-glow">
                         <div class="service-icon"><i class="fas fa-headset"></i></div>
                         <h3>Technical Support</h3>
@@ -58,13 +58,21 @@ session_start();
                         <p class="mb-0"><strong>SLA:</strong> Critical: 2h • High: 4h • Normal: 1 business day</p>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-card text-start h-100 scroll-reveal scroll-reveal-scale hover-glow">
                         <div class="service-icon"><i class="fas fa-briefcase"></i></div>
                         <h3>Careers</h3>
                         <p>We're hiring engineers and designers who love building exceptional products.</p>
                         <p class="mb-1"><strong>Careers:</strong> <a href="mailto:careers@envisionxperts.com">hr@envisionxperts.com</a></p>
                         <p class="mb-0"><strong>Location:</strong> Remote-first</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card text-start h-100 scroll-reveal scroll-reveal-scale hover-glow">
+                        <div class="service-icon"><i class="fas fa-user-tie"></i></div>
+                        <h3>Hafiz Syed Hanzala</h3>
+                        <p><strong>Sales Executive</strong></p>
+                        <p class="mb-0"><strong>Email:</strong> <a href="mailto:hanzala@envisionxperts.com">hanzala@envisionxperts.com</a></p>
                     </div>
                 </div>
             </div>

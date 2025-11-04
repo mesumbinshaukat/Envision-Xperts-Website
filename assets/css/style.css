@@ -2297,8 +2297,121 @@ h1, h2, h3, h4, h5, h6 {
     .hero-buttons .btn { width: 100%; } 
 }
 
+/* ===== FOOTER ===== */
+.footer .contact-info { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.75rem; 
+}
+
+.footer .contact-item { 
+    display: flex; 
+    align-items: center; 
+    gap: 0.75rem; 
+}
+
+.footer .contact-item i { 
+    font-size: 1.1rem; 
+    color: var(--primary-light); 
+    line-height: 1; 
+    flex-shrink: 0; 
+    width: 22px; 
+    height: 22px; 
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-top: 0; 
+}
+
+.footer .contact-item > div { 
+    display: inline-flex; 
+    align-items: baseline; 
+    flex-wrap: wrap; 
+    gap: 0; 
+}
+
+.footer .contact-item strong { 
+    font-weight: 700; 
+}
+
+.footer .contact-item strong + span { 
+    display: inline; 
+}
+
+.footer .contact-item a { 
+    color: inherit; 
+    text-decoration: none; 
+}
+
+.footer .contact-item a:hover { 
+    color: var(--primary-light); 
+    text-decoration: underline; 
+}
 /* ===== SCROLLBAR ===== */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: var(--bg-light); }
 ::-webkit-scrollbar-thumb { background: var(--gradient-primary); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--primary-dark); } 
+
+/* ===== TEAM SECTION ===== */
+.team-section .section-title { text-align: center; }
+
+.team-card {
+    background: #ffffff;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-light);
+    border: 1px solid #e5e7eb;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.team-card:hover { 
+    transform: translateY(-6px); 
+    box-shadow: var(--shadow-medium); 
+}
+
+.team-image { 
+    position: relative; 
+    width: 100%; 
+    /* Use fixed height for consistent rendering across browsers */
+    height: var(--team-img-size, 260px); 
+    overflow: hidden; 
+    background: linear-gradient(135deg, #eef2ff, #e2e8f0); 
+}
+
+.team-image img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center; 
+    display: block; 
+}
+
+.team-content { 
+    padding: 1rem 1rem 1.25rem; 
+}
+
+.team-name { 
+    font-weight: 700; 
+    color: var(--text-dark); 
+}
+
+.team-role { 
+    color: var(--primary-color); 
+    font-weight: 600; 
+    margin-bottom: 0.5rem; 
+}
+
+.team-bio { 
+    color: var(--text-muted); 
+    font-size: 0.95rem; 
+}
+
+/* Default and responsive image sizes */
+.team-section { --team-img-size: 260px; }
+@media (max-width: 991.98px) { .team-section { --team-img-size: 220px; } }
+@media (max-width: 767.98px)  { .team-section { --team-img-size: 200px; } }
+@media (max-width: 575.98px)  { .team-section { --team-img-size: 180px; } .team-content { padding: 0.85rem; } }
+
+/* Team hero description text color override to pure white */
+.page-hero-section .case-studies-hero-description { color: #ffffff; }

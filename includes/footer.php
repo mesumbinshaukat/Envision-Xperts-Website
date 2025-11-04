@@ -58,30 +58,29 @@
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
-                                <strong>Address:</strong><br>
-                                Shadam Town Karachi<br>
-                                
+                                <strong>Address:</strong>
+                                <span>Shadam Town Karachi</span>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
                             <div>
-                                <strong>Phone:</strong><br>
-                                <a href="tel:+923708528313"></a>
+                                <strong>Phone:</strong>
+                                <a href="tel:+923708528313">+92 370 852 8313</a>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
                             <div>
-                                <strong>Email:</strong><br>
+                                <strong>Email:</strong>
                                 <a href="mailto:info@envisionxperts.com">info@envisionxperts.com</a>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-clock"></i>
                             <div>
-                                <strong>Hours:</strong><br>
-                                Mon - Fri: 4:00 PM - 12:00 AM<br>
+                                <strong>Hours:</strong>
+                                <span>Mon - Fri: 4:00 PM - 12:00 AM</span>
                             </div>
                         </div>
                     </div>
