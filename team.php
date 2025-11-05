@@ -47,26 +47,30 @@ session_start();
                     'name' => 'Muneeb Sadiq',
                     'role' => 'Founder & CEO',
                     'img'  => 'team_img/muneeb_img_1.webp',
-                    'bio'  => 'Meet Muneeb Sadiq – Founder & CEO of Envision Xperts, leading innovative digital solutions with a strong background in web and software development.'
+                    'bio'  => 'Meet Muneeb Sadiq – Founder & CEO of Envision Xperts, leading innovative digital solutions with a strong background in web and software development.',
+                    'social' => 'https://github.com/muneebsadiq'
                 ],
                 [
                     'name' => 'Hafiz Syed Hanzala',
                     'role' => 'Sales Executive',
                     'img'  => 'team_img/hanzala_img_3.webp',
-                    'bio'  => 'Meet Hanzala – Sales Executive at Envision Xperts, helping businesses grow through smart digital solutions and long-term client partnerships.'
+                    'bio'  => 'Meet Hanzala – Sales Executive at Envision Xperts, helping businesses grow through smart digital solutions and long-term client partnerships.',
+                    'social' => 'https://www.linkedin.com/in/hafiz-syed-hanzala-02720b263'
                 ],
                 [
                     'name' => 'Mesum Bin Shaukat',
                     'role' => 'Full‑Stack Developer',
                     'img'  => 'team_img/mesum_img_4.png',
-                    'bio'  => 'Full-stack development with an unwavering passion for navigating the ever-evolving landscape of Information Technology.'
+                    'bio'  => 'Full-stack development with an unwavering passion for navigating the ever-evolving landscape of Information Technology.',
+                    'social' => 'https://pk.linkedin.com/in/mesum-bin-shaukat'
                 ],
                 
                 [
                     'name' => 'Umar Shakir',
                     'role' => 'Web Developer',
                     'img'  => 'team_img/umar_img_2.webp',
-                    'bio'  => 'Umar is a skilled web developer who builds fast, responsive, and user-friendly websites. He combines clean design with strong functionality to deliver seamless digital experiences.'
+                    'bio'  => 'Umar is a skilled web developer who builds fast, responsive, and user-friendly websites. He combines clean design with strong functionality to deliver seamless digital experiences.',
+                    'social' => 'https://pk.linkedin.com/in/umar-shakir-247b04247'
                 ],
             ];
             ?>
@@ -81,7 +85,12 @@ session_start();
                             <div class="team-content">
                                 <h5 class="team-name mb-1"><?= htmlspecialchars($member['name']) ?></h5>
                                 <div class="team-role"><?= htmlspecialchars($member['role']) ?></div>
-                                <p class="team-bio mb-0"><?= htmlspecialchars($member['bio']) ?></p>
+                                <p class="team-bio mb-3"><?= htmlspecialchars($member['bio']) ?></p>
+                                <?php if (!empty($member['social'])): ?>
+                                    <a href="<?= htmlspecialchars($member['social']) ?>" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+                                        <i class="fab fa-<?= strpos($member['social'], 'github') !== false ? 'github' : 'linkedin' ?>"></i> Connect
+                                    </a>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
