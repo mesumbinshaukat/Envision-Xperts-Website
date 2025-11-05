@@ -350,6 +350,321 @@ session_start();
                     </div>
                 </div>
 
+                <!-- The Utility Kilt -->
+                <div class="col-lg-6 col-md-6 case-study-item" data-category="e-commerce" data-aos="fade-up" data-aos-delay="600">
+                    <div class="case-study-card-detailed hover-lift">
+                        <div class="case-study-image-large">
+                            <img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?w=800&h=500&fit=crop" alt="The Utility Kilt" class="img-fluid">
+                            <div class="case-study-overlay-detailed">
+                                <div class="overlay-content">
+                                    <div class="case-study-category">E-Commerce</div>
+                                    <h3 class="overlay-title">The Utility Kilt</h3>
+                                    <div class="overlay-results">
+                                        <span><i class="fas fa-shopping-cart"></i> Magento Platform</span>
+                                        <span><i class="fas fa-star"></i> Custom Products</span>
+                                    </div>
+                                    <a href="case-study-utility-kilt.php" class="btn btn-light btn-sm">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-study-content-detailed">
+                            <div class="case-meta">
+                                <span><i class="fas fa-calendar"></i> 2024</span>
+                                <span><i class="fas fa-clock"></i> 5 Months</span>
+                                <span><i class="fas fa-tools"></i> Magento</span>
+                            </div>
+                            <h3 class="case-title">The Utility Kilt - Custom Apparel Store</h3>
+                            <p class="case-description">Specialized Magento e-commerce platform for custom utility kilts with advanced product customization and sizing options.</p>
+                            <div class="case-highlights">
+                                <div class="highlight-item">
+                                    <i class="fas fa-cogs"></i>
+                                    <div>
+                                        <h5>Custom Options</h5>
+                                        <p>Product personalization</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-shipping-fast"></i>
+                                    <div>
+                                        <h5>Global Shipping</h5>
+                                        <p>Worldwide delivery</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EBS UK -->
+                <div class="col-lg-6 col-md-6 case-study-item" data-category="e-commerce" data-aos="fade-up" data-aos-delay="700">
+                    <div class="case-study-card-detailed hover-lift">
+                        <div class="case-study-image-large">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop" alt="EBS UK" class="img-fluid">
+                            <div class="case-study-overlay-detailed">
+                                <div class="overlay-content">
+                                    <div class="case-study-category">E-Commerce</div>
+                                    <h3 class="overlay-title">EBS UK</h3>
+                                    <div class="overlay-results">
+                                        <span><i class="fas fa-store"></i> Enterprise Solution</span>
+                                        <span><i class="fas fa-chart-line"></i> High Performance</span>
+                                    </div>
+                                    <a href="case-study-ebs.php" class="btn btn-light btn-sm">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-study-content-detailed">
+                            <div class="case-meta">
+                                <span><i class="fas fa-calendar"></i> 2024</span>
+                                <span><i class="fas fa-clock"></i> 6 Months</span>
+                                <span><i class="fas fa-tools"></i> Magento</span>
+                            </div>
+                            <h3 class="case-title">EBS UK - Enterprise E-commerce Platform</h3>
+                            <p class="case-description">Comprehensive Magento-based e-commerce solution for UK market with advanced inventory management and multi-channel integration.</p>
+                            <div class="case-highlights">
+                                <div class="highlight-item">
+                                    <i class="fas fa-boxes"></i>
+                                    <div>
+                                        <h5>Inventory System</h5>
+                                        <p>Real-time tracking</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-sync"></i>
+                                    <div>
+                                        <h5>Multi-Channel</h5>
+                                        <p>Seamless integration</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Assured Performance -->
+                <div class="col-lg-6 col-md-6 case-study-item" data-category="e-commerce" data-aos="fade-up" data-aos-delay="800">
+                    <div class="case-study-card-detailed hover-lift">
+                        <div class="case-study-image-large">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=500&fit=crop" alt="Assured Performance" class="img-fluid">
+                            <div class="case-study-overlay-detailed">
+                                <div class="overlay-content">
+                                    <div class="case-study-category">E-Commerce</div>
+                                    <h3 class="overlay-title">Assured Performance</h3>
+                                    <div class="overlay-results">
+                                        <span><i class="fas fa-car"></i> Automotive Parts</span>
+                                        <span><i class="fas fa-trophy"></i> Industry Leader</span>
+                                    </div>
+                                    <a href="case-study-assured-performance.php" class="btn btn-light btn-sm">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-study-content-detailed">
+                            <div class="case-meta">
+                                <span><i class="fas fa-calendar"></i> 2024</span>
+                                <span><i class="fas fa-clock"></i> 7 Months</span>
+                                <span><i class="fas fa-tools"></i> Magento</span>
+                            </div>
+                            <h3 class="case-title">Assured Performance - Automotive E-commerce</h3>
+                            <p class="case-description">Specialized Magento platform for automotive parts with advanced search, compatibility checking, and B2B features.</p>
+                            <div class="case-highlights">
+                                <div class="highlight-item">
+                                    <i class="fas fa-search"></i>
+                                    <div>
+                                        <h5>Smart Search</h5>
+                                        <p>Part compatibility</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-handshake"></i>
+                                    <div>
+                                        <h5>B2B Portal</h5>
+                                        <p>Wholesale features</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unicraft Belgium -->
+                <div class="col-lg-6 col-md-6 case-study-item" data-category="e-commerce" data-aos="fade-up" data-aos-delay="900">
+                    <div class="case-study-card-detailed hover-lift">
+                        <div class="case-study-image-large">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=500&fit=crop" alt="Unicraft Belgium" class="img-fluid">
+                            <div class="case-study-overlay-detailed">
+                                <div class="overlay-content">
+                                    <div class="case-study-category">E-Commerce</div>
+                                    <h3 class="overlay-title">Unicraft Belgium</h3>
+                                    <div class="overlay-results">
+                                        <span><i class="fas fa-shopping-bag"></i> OpenCart Platform</span>
+                                        <span><i class="fas fa-globe"></i> European Market</span>
+                                    </div>
+                                    <a href="case-study-unicraft.php" class="btn btn-light btn-sm">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-study-content-detailed">
+                            <div class="case-meta">
+                                <span><i class="fas fa-calendar"></i> 2024</span>
+                                <span><i class="fas fa-clock"></i> 4 Months</span>
+                                <span><i class="fas fa-tools"></i> OpenCart PHP</span>
+                            </div>
+                            <h3 class="case-title">Unicraft Belgium - Craft Supplies Store</h3>
+                            <p class="case-description">OpenCart-based e-commerce platform for craft supplies with multi-language support and European payment integration.</p>
+                            <div class="case-highlights">
+                                <div class="highlight-item">
+                                    <i class="fas fa-language"></i>
+                                    <div>
+                                        <h5>Multi-Language</h5>
+                                        <p>European markets</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-euro-sign"></i>
+                                    <div>
+                                        <h5>EU Payments</h5>
+                                        <p>Local gateways</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gigacrea -->
+                <div class="col-lg-6 col-md-6 case-study-item" data-category="e-commerce" data-aos="fade-up" data-aos-delay="1000">
+                    <div class="case-study-card-detailed hover-lift">
+                        <div class="case-study-image-large">
+                            <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&h=500&fit=crop" alt="Gigacrea" class="img-fluid">
+                            <div class="case-study-overlay-detailed">
+                                <div class="overlay-content">
+                                    <div class="case-study-category">E-Commerce</div>
+                                    <h3 class="overlay-title">Gigacrea</h3>
+                                    <div class="overlay-results">
+                                        <span><i class="fas fa-paint-brush"></i> Creative Products</span>
+                                        <span><i class="fas fa-rocket"></i> Fast Performance</span>
+                                    </div>
+                                    <a href="case-study-gigacrea.php" class="btn btn-light btn-sm">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-study-content-detailed">
+                            <div class="case-meta">
+                                <span><i class="fas fa-calendar"></i> 2024</span>
+                                <span><i class="fas fa-clock"></i> 4 Months</span>
+                                <span><i class="fas fa-tools"></i> OpenCart PHP</span>
+                            </div>
+                            <h3 class="case-title">Gigacrea - Creative Supplies Platform</h3>
+                            <p class="case-description">OpenCart e-commerce solution for creative and artistic supplies with custom product filtering and visual catalog.</p>
+                            <div class="case-highlights">
+                                <div class="highlight-item">
+                                    <i class="fas fa-filter"></i>
+                                    <div>
+                                        <h5>Smart Filters</h5>
+                                        <p>Product discovery</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-images"></i>
+                                    <div>
+                                        <h5>Visual Catalog</h5>
+                                        <p>Rich media gallery</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fragrance Line by SM -->
+                <div class="col-lg-6 col-md-6 case-study-item" data-category="e-commerce" data-aos="fade-up" data-aos-delay="1100">
+                    <div class="case-study-card-detailed hover-lift">
+                        <div class="case-study-image-large">
+                            <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&h=500&fit=crop" alt="Fragrance Line by SM" class="img-fluid">
+                            <div class="case-study-overlay-detailed">
+                                <div class="overlay-content">
+                                    <div class="case-study-category">E-Commerce</div>
+                                    <h3 class="overlay-title">Fragrance Line by SM</h3>
+                                    <div class="overlay-results">
+                                        <span><i class="fas fa-spray-can"></i> Luxury Fragrances</span>
+                                        <span><i class="fas fa-wordpress"></i> WordPress</span>
+                                    </div>
+                                    <a href="case-study-fragrance-line.php" class="btn btn-light btn-sm">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-study-content-detailed">
+                            <div class="case-meta">
+                                <span><i class="fas fa-calendar"></i> 2024</span>
+                                <span><i class="fas fa-clock"></i> 3 Months</span>
+                                <span><i class="fas fa-tools"></i> WordPress</span>
+                            </div>
+                            <h3 class="case-title">Fragrance Line by SM - Perfume Store</h3>
+                            <p class="case-description">WordPress-based e-commerce site for premium fragrances with elegant design and WooCommerce integration.</p>
+                            <div class="case-highlights">
+                                <div class="highlight-item">
+                                    <i class="fas fa-palette"></i>
+                                    <div>
+                                        <h5>Elegant Design</h5>
+                                        <p>Luxury aesthetics</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <div>
+                                        <h5>WooCommerce</h5>
+                                        <p>Seamless checkout</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Amore Pakistan -->
+                <div class="col-lg-6 col-md-6 case-study-item" data-category="e-commerce" data-aos="fade-up" data-aos-delay="1200">
+                    <div class="case-study-card-detailed hover-lift">
+                        <div class="case-study-image-large">
+                            <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?w=800&h=500&fit=crop" alt="Amore Pakistan" class="img-fluid">
+                            <div class="case-study-overlay-detailed">
+                                <div class="overlay-content">
+                                    <div class="case-study-category">E-Commerce</div>
+                                    <h3 class="overlay-title">Amore Pakistan</h3>
+                                    <div class="overlay-results">
+                                        <span><i class="fas fa-cookie-bite"></i> Premium Chocolates</span>
+                                        <span><i class="fas fa-star"></i> Luxury Brand</span>
+                                    </div>
+                                    <a href="case-study-amore.php" class="btn btn-light btn-sm">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-study-content-detailed">
+                            <div class="case-meta">
+                                <span><i class="fas fa-calendar"></i> 2024</span>
+                                <span><i class="fas fa-clock"></i> 4 Months</span>
+                                <span><i class="fas fa-tools"></i> WordPress</span>
+                            </div>
+                            <h3 class="case-title">Amore Pakistan - Premium Chocolates</h3>
+                            <p class="case-description">WordPress e-commerce platform for premium handcrafted chocolates with elegant product showcase and gift customization.</p>
+                            <div class="case-highlights">
+                                <div class="highlight-item">
+                                    <i class="fas fa-gift"></i>
+                                    <div>
+                                        <h5>Gift Customization</h5>
+                                        <p>Personalized options</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <div>
+                                        <h5>Mobile First</h5>
+                                        <p>Optimized experience</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
