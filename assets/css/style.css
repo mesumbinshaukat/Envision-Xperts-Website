@@ -2755,8 +2755,14 @@ html {
 @media (max-width: 767.98px)  { .team-section { --team-img-size: 200px; } }
 @media (max-width: 575.98px)  { .team-section { --team-img-size: 180px; } .team-content { padding: 0.85rem; } }
 
-/* Team hero description text color override to pure white */
-.page-hero-section .case-studies-hero-description { color: #ffffff; }
+/* Team hero title and description text color override to pure white */
+.page-hero-section .case-studies-hero-title { 
+    color: #ffffff !important; 
+}
+
+.page-hero-section .case-studies-hero-description { 
+    color: #ffffff !important; 
+}
 
 /* ===== COMPREHENSIVE MOBILE RESPONSIVENESS FIXES ===== */
 @media only screen and (max-width: 768px) {
