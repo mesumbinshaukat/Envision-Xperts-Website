@@ -48,7 +48,8 @@ session_start();
                     'role' => 'Founder & CEO',
                     'img'  => 'team_img/muneeb_img_1.webp',
                     'bio'  => 'Meet Muneeb Sadiq – Founder & CEO of Envision Xperts, leading innovative digital solutions with a strong background in web and software development.',
-                    'social' => 'https://github.com/muneebsadiq'
+                    'github' => 'https://github.com/muneebsadiq',
+                    'upwork' => 'https://www.upwork.com/freelancers/~01c367b566d988f50f'
                 ],
                 [
                     'name' => 'Hafiz Syed Hanzala',

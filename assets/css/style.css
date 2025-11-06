@@ -45,6 +45,12 @@
 /* ===== GLOBAL ===== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
 body {
     font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
@@ -2699,6 +2705,50 @@ html {
     font-size: 0.95rem; 
 }
 
+.team-social {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.team-social .btn {
+    min-width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.team-social .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.team-social .btn-outline-success {
+    border-color: #14a800;
+    color: #14a800;
+    background-color: #f0fdf4;
+}
+
+.team-social .btn-outline-success:hover {
+    background-color: #14a800;
+    color: white;
+    border-color: #14a800;
+}
+
+.team-social .btn i {
+    font-size: 1rem;
+}
+
+.team-social .btn svg {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
 /* Default and responsive image sizes */
 .team-section { --team-img-size: 260px; }
 @media (max-width: 991.98px) { .team-section { --team-img-size: 220px; } }
@@ -2707,3 +2757,214 @@ html {
 
 /* Team hero description text color override to pure white */
 .page-hero-section .case-studies-hero-description { color: #ffffff; }
+
+/* ===== COMPREHENSIVE MOBILE RESPONSIVENESS FIXES ===== */
+@media only screen and (max-width: 768px) {
+    /* Global overflow fix */
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    /* Team Page Mobile Fixes */
+    .team-card {
+        margin-bottom: 1.5rem;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .team-image {
+        height: 280px;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .team-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    .team-content {
+        padding: 1.25rem;
+    }
+    
+    .team-name {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .team-role {
+        font-size: 0.95rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .team-bio {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    
+    .team-social {
+        margin-top: 1rem;
+        gap: 0.5rem;
+    }
+    
+    .team-social .btn {
+        min-width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+    
+    /* Contact Page Email Fix */
+    .service-card {
+        margin-bottom: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .service-card h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+        word-wrap: break-word;
+    }
+    
+    .service-card p {
+        font-size: 0.9rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+    
+    .service-card a {
+        word-break: break-all;
+        overflow-wrap: break-word;
+        display: inline-block;
+        max-width: 100%;
+        font-size: 0.85rem;
+    }
+    
+    /* Home Page Animation Fixes */
+    .hero-section {
+        min-height: 100vh;
+        padding: 2rem 0;
+    }
+    
+    .hero-title {
+        font-size: 2rem !important;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Disable complex animations on mobile */
+    .floating-element {
+        transform: none !important;
+    }
+    
+    /* Stats section mobile */
+    .stat-card {
+        margin-bottom: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    /* Services section mobile */
+    .service-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Case studies mobile */
+    .case-study-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .case-study-image {
+        height: 220px;
+    }
+    
+    /* Button adjustments */
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .btn-lg {
+        padding: 0.875rem 1.75rem;
+        font-size: 1rem;
+    }
+    
+    /* Section padding adjustments */
+    section {
+        padding: 3rem 0;
+    }
+    
+    .py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+    
+    /* Typography mobile */
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+    
+    /* Grid adjustments */
+    .row.g-4 {
+        --bs-gutter-x: 1rem;
+        --bs-gutter-y: 1rem;
+    }
+    
+    /* Navbar mobile fixes */
+    .navbar {
+        padding: 0.75rem 0;
+    }
+    
+    .navbar-brand img {
+        height: 40px;
+    }
+}
+
+/* Extra small devices (phones, less than 576px) */
+@media only screen and (max-width: 575.98px) {
+    .hero-title {
+        font-size: 1.75rem !important;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .team-image {
+        height: 250px;
+    }
+    
+    .btn {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.85rem;
+    }
+    
+    .service-card a {
+        font-size: 0.8rem;
+    }
+}
