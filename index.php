@@ -88,43 +88,84 @@ session_start();
             </div>
             
             <div class="row g-4">
-                <!-- Case Study 1 -->
+                <!-- Case Study 1 - The Utility Kilt -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="case-study-card hover-lift">
                         <div class="case-study-image">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="TechCors Website" class="img-fluid">
+                            <img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?w=600&h=400&fit=crop" alt="The Utility Kilt" class="img-fluid">
                             <div class="case-study-overlay">
-                                <div class="case-study-category">Web Design</div>
+                                <div class="case-study-category">Magento</div>
                                 <div class="case-study-actions">
-                                    <a href="case-study-techcors.php" class="btn-case-study"><i class="fas fa-link"></i></a>
+                                    <a href="case-study-utility-kilt.php" class="btn-case-study me-2"><i class="fas fa-link"></i></a>
+                                    <a href="https://www.theutilitykilt.com/" target="_blank" class="btn-case-study"><i class="fas fa-external-link-alt"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="case-study-content">
-                            <h3 class="case-study-title">TechCors Corporate Website</h3>
+                            <h3 class="case-study-title">The Utility Kilt - Custom Apparel</h3>
                             <div class="case-study-meta">
-                                <span><i class="fas fa-calendar"></i> 2025</span>
-                                <span><i class="fas fa-chart-line"></i> 300% Traffic</span>
+                                <span><i class="fas fa-calendar"></i> 2024</span>
+                                <span><i class="fas fa-cogs"></i> Magento</span>
                             </div>
-                            <p class="case-study-description">Modern corporate website for leading software company with focus on digital solutions, innovative UI/UX design, and enhanced user experience that drove significant growth.</p>
+                            <p class="case-study-description">Specialized Magento e-commerce platform for custom utility kilts with advanced product customization, sizing options, and global shipping capabilities.</p>
                             <div class="case-study-results">
-                                <div class="result-item"><i class="fas fa-desktop"></i> Modern Design</div>
-                                <div class="result-item"><i class="fas fa-mobile-alt"></i> Mobile First</div>
-                                <div class="result-item"><i class="fas fa-rocket"></i> 95+ PageSpeed</div>
+                                <div class="result-item"><i class="fas fa-cogs"></i> Custom Options</div>
+                                <div class="result-item"><i class="fas fa-shipping-fast"></i> Global Shipping</div>
+                                <div class="result-item"><i class="fas fa-star"></i> Premium Quality</div>
+                            </div>
+                            <div class="mt-3">
+                                <a href="https://www.theutilitykilt.com/" target="_blank" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-external-link-alt me-2"></i>View Live Website
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Case Study 2 -->
+                <!-- Case Study 2 - Unicraft Belgium -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="case-study-card hover-lift">
+                        <div class="case-study-image">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop" alt="Unicraft Belgium" class="img-fluid">
+                            <div class="case-study-overlay">
+                                <div class="case-study-category">PHP / OpenCart</div>
+                                <div class="case-study-actions">
+                                    <a href="case-study-unicraft.php" class="btn-case-study me-2"><i class="fas fa-link"></i></a>
+                                    <a href="https://www.unicraft.be/" target="_blank" class="btn-case-study"><i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-study-content">
+                            <h3 class="case-study-title">Unicraft Belgium - Craft Supplies</h3>
+                            <div class="case-study-meta">
+                                <span><i class="fas fa-calendar"></i> 2024</span>
+                                <span><i class="fas fa-code"></i> OpenCart PHP</span>
+                            </div>
+                            <p class="case-study-description">OpenCart-based e-commerce platform for craft supplies with multi-language support and European payment integration for seamless shopping.</p>
+                            <div class="case-study-results">
+                                <div class="result-item"><i class="fas fa-language"></i> Multi-Language</div>
+                                <div class="result-item"><i class="fas fa-euro-sign"></i> EU Payments</div>
+                                <div class="result-item"><i class="fas fa-globe"></i> European Market</div>
+                            </div>
+                            <div class="mt-3">
+                                <a href="https://www.unicraft.be/" target="_blank" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-external-link-alt me-2"></i>View Live Website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Case Study 3 - Shoe Potion -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="case-study-card hover-lift">
                         <div class="case-study-image">
                             <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=400&fit=crop" alt="Shoe Potion" class="img-fluid">
                             <div class="case-study-overlay">
-                                <div class="case-study-category">E-Commerce</div>
+                                <div class="case-study-category">Shopify</div>
                                 <div class="case-study-actions">
-                                    <a href="case-study-shoe-potion.php" class="btn-case-study"><i class="fas fa-link"></i></a>
+                                    <a href="case-study-shoe-potion.php" class="btn-case-study me-2"><i class="fas fa-link"></i></a>
+                                    <a href="https://shoepotion.com/" target="_blank" class="btn-case-study"><i class="fas fa-external-link-alt"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -140,33 +181,10 @@ session_start();
                                 <div class="result-item"><i class="fas fa-credit-card"></i> Secure Checkout</div>
                                 <div class="result-item"><i class="fas fa-users"></i> 10k+ Customers</div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Case Study 3 -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="case-study-card hover-lift">
-                        <div class="case-study-image">
-                            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop" alt="Iman Construction" class="img-fluid">
-                            <div class="case-study-overlay">
-                                <div class="case-study-category">Web Design</div>
-                                <div class="case-study-actions">
-                                    <a href="case-study-iman-construction.php" class="btn-case-study"><i class="fas fa-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="case-study-content">
-                            <h3 class="case-study-title">Iman Construction Company</h3>
-                            <div class="case-study-meta">
-                                <span><i class="fas fa-calendar"></i> 2025</span>
-                                <span><i class="fas fa-building"></i> Premium Builder</span>
-                            </div>
-                            <p class="case-study-description">Professional construction company website showcasing premium services in Karachi with interactive project portfolio and cost calculator tool.</p>
-                            <div class="case-study-results">
-                                <div class="result-item"><i class="fas fa-calculator"></i> Cost Calculator</div>
-                                <div class="result-item"><i class="fas fa-award"></i> 15 Years Warranty</div>
-                                <div class="result-item"><i class="fas fa-images"></i> Project Gallery</div>
+                            <div class="mt-3">
+                                <a href="https://shoepotion.com/" target="_blank" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-external-link-alt me-2"></i>View Live Website
+                                </a>
                             </div>
                         </div>
                     </div>

@@ -1260,11 +1260,12 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     margin-top: 0;
     padding: 1.25rem 0;
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-top: none;
     border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
     box-shadow: var(--shadow-medium);
-    background: #ffffff;
+    background: rgba(17, 24, 39, 0.98);
+    backdrop-filter: blur(10px);
     z-index: 1200;
     max-height: calc(100vh - 90px);
     overflow-y: auto;
@@ -1285,7 +1286,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar .dropdown-menu.mega-menu .mega-menu-section h5 {
     font-weight: 700;
-    color: var(--text-dark);
+    color: var(--text-light);
     margin-bottom: 0.75rem;
 }
 
@@ -1301,7 +1302,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar .dropdown-menu.mega-menu .mega-menu-list a {
     display: block;
-    color: var(--text-dark);
+    color: var(--text-light);
     text-decoration: none;
     padding: 0.25rem 0;
     transition: var(--transition);
@@ -1312,12 +1313,41 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateX(4px);
 }
 
+/* ===== REGULAR DROPDOWN MENU (About, etc.) ===== */
+.navbar .dropdown-menu:not(.mega-menu) {
+    background: rgba(17, 24, 39, 0.98);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+    min-width: 200px;
+    box-shadow: var(--shadow-medium);
+}
+
+.navbar .dropdown-menu:not(.mega-menu) .dropdown-item {
+    color: var(--text-light);
+    padding: 0.5rem 1.5rem;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.navbar .dropdown-menu:not(.mega-menu) .dropdown-item:hover {
+    background: rgba(59, 130, 246, 0.2);
+    color: var(--primary-light);
+    padding-left: 2rem;
+}
+
 /* Show mega menu on hover for desktops; keep click/touch behavior for mobile */
 @media (min-width: 992px) {
     .navbar .dropdown:hover > .dropdown-menu.mega-menu {
         display: block;
         opacity: 1;
         transform: translateY(0);
+    }
+    
+    .navbar .dropdown:hover > .dropdown-menu:not(.mega-menu) {
+        display: block;
     }
 }
 
@@ -1326,6 +1356,12 @@ h1, h2, h3, h4, h5, h6 {
     .navbar .dropdown-menu.mega-menu {
         position: static; /* flow within the collapsed nav */
         max-height: 60vh;
+    }
+    
+    .navbar .dropdown-menu:not(.mega-menu) {
+        background: rgba(17, 24, 39, 0.95);
+        border: none;
+        margin-top: 0;
     }
 }
 
@@ -1602,6 +1638,15 @@ h1, h2, h3, h4, h5, h6 {
 .service-card p { 
     color: var(--text-muted); 
     margin-bottom: 1.25rem; 
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.service-card a {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    display: inline-block;
+    max-width: 100%;
 }
 
 .service-link { 
@@ -2347,6 +2392,253 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary-light); 
     text-decoration: underline; 
 }
+/* ===== MOBILE RESPONSIVENESS IMPROVEMENTS ===== */
+@media (max-width: 768px) {
+    /* Reduce hero section height on mobile */
+    .hero-section {
+        min-height: 100vh;
+        height: auto;
+    }
+    
+    .hero-section .min-vh-100 {
+        min-height: 90vh;
+        padding: 2rem 0;
+    }
+    
+    /* Optimize hero content for mobile */
+    .hero-title {
+        font-size: 2rem !important;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem !important;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-description {
+        font-size: 0.95rem !important;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        margin: 0 !important;
+    }
+    
+    /* Hide floating elements on mobile for better performance */
+    .floating-elements {
+        display: none !important;
+    }
+    
+    /* Optimize section padding */
+    section.py-5 {
+        padding: 2.5rem 0 !important;
+    }
+    
+    /* Service cards mobile optimization */
+    .service-card {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1.15rem;
+    }
+    
+    .service-card p {
+        font-size: 0.9rem;
+    }
+    
+    /* Case study cards mobile */
+    .case-study-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .case-study-image {
+        height: 200px;
+    }
+    
+    .case-study-content {
+        padding: 1.25rem;
+    }
+    
+    .case-study-title {
+        font-size: 1.1rem;
+    }
+    
+    .case-study-description {
+        font-size: 0.875rem;
+    }
+    
+    /* Stats cards mobile */
+    .stat-card {
+        padding: 1.25rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem !important;
+    }
+    
+    .stat-label {
+        font-size: 0.85rem;
+    }
+    
+    /* Feature highlights mobile */
+    .feature-highlight {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .feature-icon-large {
+        width: 60px;
+        height: 60px;
+        font-size: 1.75rem;
+    }
+    
+    .feature-highlight h4 {
+        font-size: 1.1rem;
+    }
+    
+    /* Section titles mobile */
+    .section-title {
+        font-size: 1.75rem !important;
+    }
+    
+    .section-subtitle {
+        font-size: 0.95rem !important;
+    }
+    
+    /* Contact form mobile */
+    .contact-form-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .form-control-lg {
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    /* Navbar mobile improvements */
+    .navbar-collapse {
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+    
+    /* Trust logos mobile */
+    .trusted-logos {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .logo-badge {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra small devices optimization */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.75rem !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem !important;
+    }
+    
+    .hero-description {
+        font-size: 0.875rem !important;
+    }
+    
+    .btn {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.9rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem !important;
+    }
+    
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Smooth scrolling behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Optimize animations for mobile */
+@media (max-width: 768px) {
+    [data-aos] {
+        transition-duration: 0.4s !important;
+    }
+    
+    /* Reduce transform intensity on mobile */
+    .hover-lift:hover {
+        transform: translateY(-3px) !important;
+    }
+    
+    .hover-glow {
+        box-shadow: none !important;
+    }
+    
+    /* Disable complex animations on mobile */
+    .scroll-reveal-scale {
+        transform: none !important;
+    }
+    
+    .scroll-reveal-left,
+    .scroll-reveal-right {
+        transform: none !important;
+    }
+}
+
+/* Performance optimizations */
+.service-card,
+.case-study-card,
+.stat-card,
+.feature-highlight {
+    will-change: auto;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
 /* ===== SCROLLBAR ===== */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: var(--bg-light); }

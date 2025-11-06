@@ -88,7 +88,7 @@ session_start();
                                 <p class="team-bio mb-3"><?= htmlspecialchars($member['bio']) ?></p>
                                 <?php if (!empty($member['social'])): ?>
                                     <a href="<?= htmlspecialchars($member['social']) ?>" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
-                                        <i class="fab fa-<?= strpos($member['social'], 'github') !== false ? 'github' : 'linkedin' ?>"></i>
+                                        <i class="fab fa-<?= strpos($member['social'], 'github') !== false ? 'github' : 'linkedin' ?>"></i> 
                                     </a>
                                 <?php endif; ?>
                             </div>
