@@ -21,11 +21,19 @@ $prefix = $isServices ? '../' : '';
                     <a class="nav-link" href="<?= $prefix ?>index.php">Home</a>
                 </li>
                 
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= $prefix ?>about.php">About</a>
+                <!-- About Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        About
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                        <li><a class="dropdown-item" href="<?= $prefix ?>about.php">About Us</a></li>
+                        <li><a class="dropdown-item" href="<?= $prefix ?>team.php">Our Team</a></li>
+                    </ul>
                 </li>
+                
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= $prefix ?>team.php">Team</a>
+                    <a class="nav-link" href="<?= $prefix ?>case-studies.php">Project</a>
                 </li>
                 
                 <!-- Services Mega Menu -->

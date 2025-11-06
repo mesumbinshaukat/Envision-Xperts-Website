@@ -4,15 +4,20 @@ $(document).ready(function() {
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
-    // Initialize AOS only if user hasn't requested reduced motion
+    // Initialize AOS with mobile-optimized settings
     if (!prefersReducedMotion) {
+        const isMobile = window.innerWidth <= 768;
         AOS.init({ 
-            duration: 1000, 
+            duration: isMobile ? 600 : 1000, 
             easing: 'ease-out-cubic', 
             once: true, 
             mirror: false,
-            offset: 100,
-            delay: 0
+            offset: isMobile ? 50 : 100,
+            delay: 0,
+            disable: function() {
+                // Disable on very small screens to improve performance
+                return window.innerWidth < 480;
+            }
         });
     }
 
@@ -132,8 +137,8 @@ $(document).ready(function() {
         });
     }
 
-    // FLOATING PARALLAX (only if not reduced motion)
-    if (!prefersReducedMotion) {
+    // FLOATING PARALLAX (only if not reduced motion and not mobile)
+    if (!prefersReducedMotion && window.innerWidth > 768) {
         $(window).on('scroll', function(){
             var s = $(this).scrollTop();
             $('.floating-element').each(function(){ 
@@ -143,8 +148,8 @@ $(document).ready(function() {
         });
     }
 
-    // HERO TEXT ANIMATIONS (only if not reduced motion)
-    if (!prefersReducedMotion) {
+    // HERO TEXT ANIMATIONS (only if not reduced motion and not mobile)
+    if (!prefersReducedMotion && window.innerWidth > 768) {
         var $hero = $('.hero-section .hero-title');
         if ($('body').find('section.hero-section').length && window.location.pathname.match(/index\.php|\/$/)) {
             var original = $hero.text().trim();
