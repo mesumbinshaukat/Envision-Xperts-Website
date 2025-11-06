@@ -1604,6 +1604,11 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1.25rem; 
 }
 
+.service-card a {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
 .service-link { 
     color: var(--primary-color); 
     text-decoration: none; 
