@@ -1540,18 +1540,18 @@ h1, h2, h3, h4, h5, h6 {
     border-top: none; 
     border-left: none; 
     transform: rotate(45deg); 
-    animation: bounce 2s infinite; 
+    animation: scrollBounce 2s infinite; 
 }
 
-@keyframes bounce { 
+@keyframes scrollBounce { 
     0%, 20%, 50%, 80%, 100% { 
-        transform: translateY(0) rotate(45deg);
+        transform: rotate(45deg) translateY(0);
     } 
     40% { 
-        transform: translateY(-10px) rotate(45deg);
+        transform: rotate(45deg) translateY(10px);
     } 
     60% { 
-        transform: translateY(-5px) rotate(45deg);
+        transform: rotate(45deg) translateY(5px);
     } 
 }
 
@@ -1837,10 +1837,38 @@ h1, h2, h3, h4, h5, h6 {
     .contact-section {
         padding: 3rem 0;
         min-height: auto;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    
+    .contact-section .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .contact-section .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .contact-section .col-lg-10 {
+        padding-left: 0;
+        padding-right: 0;
     }
     
     .contact-form-wrapper {
-        padding: 2rem;
+        padding: 2rem 1.5rem;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    .contact-section .section-title,
+    .contact-section .section-subtitle {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
 
@@ -2416,21 +2444,36 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 2rem !important;
         line-height: 1.2;
         margin-bottom: 1rem;
+        color: #ffffff !important;
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
     }
     
     .hero-subtitle {
         font-size: 1.25rem !important;
         margin-bottom: 1rem;
+        color: #ffffff !important;
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
     }
     
     .hero-description {
         font-size: 0.95rem !important;
         margin-bottom: 1.5rem;
+        color: #ffffff !important;
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
     }
     
     .hero-buttons {
         flex-direction: column;
         gap: 0.75rem;
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
     }
     
     .hero-buttons .btn {
@@ -2438,9 +2481,28 @@ h1, h2, h3, h4, h5, h6 {
         margin: 0 !important;
     }
     
-    /* Hide floating elements on mobile for better performance */
+    /* Hide floating elements and Lottie animation on mobile for better performance */
     .floating-elements {
         display: none !important;
+    }
+    
+    .lottie-container {
+        display: none !important;
+    }
+    
+    .hero-image {
+        display: none !important;
+    }
+    
+    /* Ensure hero content takes full width on mobile */
+    .hero-section .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .hero-content {
+        text-align: center;
+        padding: 0 1rem;
     }
     
     /* Optimize section padding */
@@ -2861,22 +2923,57 @@ html {
     .hero-section {
         min-height: 100vh;
         padding: 2rem 0;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    
+    .hero-section .container {
+        width: 100%;
+        max-width: 100%;
     }
     
     .hero-title {
         font-size: 2rem !important;
         line-height: 1.2;
         margin-bottom: 1rem;
+        color: #ffffff !important;
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
     }
     
     .hero-subtitle {
         font-size: 1rem;
         margin-bottom: 1.5rem;
+        color: #ffffff !important;
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+    }
+    
+    .hero-description {
+        color: #ffffff !important;
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
     }
     
     /* Disable complex animations on mobile */
     .floating-element {
-        transform: none !important;
+        display: none !important;
+    }
+    
+    .lottie-container {
+        display: none !important;
+    }
+    
+    .hero-image {
+        display: none !important;
+    }
+    
+    /* Hide scroll indicator on mobile */
+    .scroll-indicator {
+        display: none !important;
     }
     
     /* Stats section mobile */
