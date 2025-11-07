@@ -2906,11 +2906,13 @@ html {
     .page-hero-section h1,
     .page-hero-section .case-studies-hero-title {
         font-size: 1.75rem !important;
+        color: #ffffff !important;
     }
     
     .page-hero-section p,
     .page-hero-section .case-studies-hero-description {
         font-size: 0.95rem !important;
+        color: #ffffff !important;
     }
 }
 
