@@ -46,7 +46,7 @@ session_start();
             <div class="row text-center mb-4">
                 <div class="col-12" data-aos="fade-up">
                     <h2 class="section-title">Meet the Team</h2>
-                    <p class="section-subtitle">Consistent cards, same-sized photos, and a clean layout for better readability</p>
+                    <p class="section-subtitle">Every project starts with a passionate team. Get to know the creative minds who turn ideas into reality every day.</p>
                 </div>
             </div>
 
