@@ -597,10 +597,12 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
     .case-studies-hero-title {
         font-size: 2rem;
+        color: #ffffff !important;
     }
     
     .case-studies-hero-description {
         font-size: 1rem;
+        color: #ffffff !important;
     }
     
     .case-studies-hero-stats {
@@ -2444,6 +2446,7 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 2rem !important;
         line-height: 1.2;
         margin-bottom: 1rem;
+        margin-top: 1rem;
         color: #ffffff !important;
         opacity: 1 !important;
         transform: none !important;
@@ -2624,6 +2627,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 480px) {
     .hero-title {
         font-size: 1.75rem !important;
+        margin-top: 20px;
     }
     
     .hero-subtitle {
@@ -2849,7 +2853,7 @@ html {
     }
     
     .team-image {
-        height: 280px;
+        height: 300px;
         width: 100%;
         overflow: hidden;
     }
@@ -2858,7 +2862,8 @@ html {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center;
+        object-position: center center;
+        display: block;
     }
     
     .team-content {
@@ -2935,7 +2940,7 @@ html {
     .hero-title {
         font-size: 2rem !important;
         line-height: 1.2;
-        margin-bottom: 1rem;
+        /* margin-bottom: 1rem; */
         color: #ffffff !important;
         opacity: 1 !important;
         transform: none !important;
@@ -3052,6 +3057,7 @@ html {
 @media only screen and (max-width: 575.98px) {
     .hero-title {
         font-size: 1.75rem !important;
+        margin-top: 20px;
     }
     
     .section-title {
@@ -3059,7 +3065,15 @@ html {
     }
     
     .team-image {
-        height: 250px;
+        height: 280px;
+    }
+    
+    .team-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        display: block;
     }
     
     .btn {
@@ -3070,4 +3084,69 @@ html {
     .service-card a {
         font-size: 0.8rem;
     }
+}
+
+/* ===== FINAL OVERRIDES: WHITE HERO TITLES ON MOBILE ===== */
+@media (max-width: 768px) {
+    .case-study-hero-title,
+    .case-studies-hero-title,
+    .page-hero-section h1,
+    .case-studies-hero-section h1,
+    .hero-section h1,
+    .hero-title {
+        color: #ffffff !important;
+    }
+    
+    .hero-section,
+    .page-hero-section,
+    .case-studies-hero-section {
+        padding-top: 100px !important;
+    }
+    
+    .team-image {
+        height: 300px !important;
+    }
+    
+    .team-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+    .case-study-hero-title,
+    .case-studies-hero-title,
+    .hero-title,
+    .page-hero-section h1,
+    .case-studies-hero-section h1 {
+        color: #ffffff !important;
+    }
+    
+    .hero-section,
+    .page-hero-section,
+    .case-studies-hero-section {
+        padding-top: 90px !important;
+    }
+    
+    .team-image {
+        height: 280px !important;
+    }
+    
+    .team-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        display: block;
+    }
+}
+
+/* Desktop hero sections padding */
+.hero-section,
+.page-hero-section,
+.case-studies-hero-section {
+    padding-top: 120px !important;
 }
