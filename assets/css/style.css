@@ -425,6 +425,16 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     position: relative;
     overflow: hidden;
+    padding-top: 80px;
+}
+
+/* Ensure all text in page hero is white */
+.page-hero-section h1,
+.page-hero-section h2,
+.page-hero-section h3,
+.page-hero-section p,
+.page-hero-section span {
+    color: #ffffff !important;
 }
 
 .page-hero-section .hero-background {
@@ -479,6 +489,16 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     overflow: hidden;
     padding: 6rem 0;
+    padding-top: 8rem;
+}
+
+/* Ensure all text in case studies hero is white */
+.case-studies-hero-section h1,
+.case-studies-hero-section h2,
+.case-studies-hero-section h3,
+.case-studies-hero-section p,
+.case-studies-hero-section span {
+    color: #ffffff !important;
 }
 
 .case-studies-hero-section .hero-background {
@@ -591,16 +611,19 @@ h1, h2, h3, h4, h5, h6 {
     .case-studies-hero-section {
         min-height: 60vh;
         padding: 4rem 0;
+        padding-top: 6rem;
     }
 }
 
 @media (max-width: 768px) {
     .case-studies-hero-title {
-        font-size: 2rem;
+        font-size: 2rem !important;
+        color: #ffffff !important;
     }
     
     .case-studies-hero-description {
-        font-size: 1rem;
+        font-size: 1rem !important;
+        color: #ffffff !important;
     }
     
     .case-studies-hero-stats {
@@ -615,6 +638,11 @@ h1, h2, h3, h4, h5, h6 {
     
     .hero-stat-item .stat-number {
         font-size: 2rem;
+    }
+    
+    .case-studies-hero-section {
+        padding-top: 100px;
+        padding-bottom: 3rem;
     }
 }
 
@@ -2824,6 +2852,54 @@ html {
 
 .page-hero-section .case-studies-hero-description { 
     color: #ffffff !important; 
+}
+
+/* Page hero mobile responsiveness */
+@media (max-width: 768px) {
+    .page-hero-section {
+        min-height: 50vh;
+        padding-top: 100px;
+        padding-bottom: 3rem;
+    }
+    
+    .page-hero-section .min-vh-70 {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+    
+    .page-hero-section h1,
+    .page-hero-section .case-studies-hero-title {
+        font-size: 2rem !important;
+        margin-bottom: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .page-hero-section p,
+    .page-hero-section .case-studies-hero-description {
+        font-size: 1rem !important;
+        padding: 0 1rem;
+    }
+    
+    .page-hero-section .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-hero-section {
+        padding-top: 90px;
+    }
+    
+    .page-hero-section h1,
+    .page-hero-section .case-studies-hero-title {
+        font-size: 1.75rem !important;
+    }
+    
+    .page-hero-section p,
+    .page-hero-section .case-studies-hero-description {
+        font-size: 0.95rem !important;
+    }
 }
 
 /* ===== COMPREHENSIVE MOBILE RESPONSIVENESS FIXES ===== */
