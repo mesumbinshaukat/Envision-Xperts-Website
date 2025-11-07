@@ -437,6 +437,11 @@ h1, h2, h3, h4, h5, h6 {
     color: #ffffff !important;
 }
 
+.page-hero-section h1,
+.page-hero-section .case-studies-hero-title {
+    margin-top: 2rem;
+}
+
 .page-hero-section .hero-background {
     position: absolute;
     top: 0;
@@ -499,6 +504,11 @@ h1, h2, h3, h4, h5, h6 {
 .case-studies-hero-section p,
 .case-studies-hero-section span {
     color: #ffffff !important;
+}
+
+.case-studies-hero-section h1,
+.case-studies-hero-section .case-studies-hero-title {
+    margin-top: 2rem;
 }
 
 .case-studies-hero-section .hero-background {
@@ -618,6 +628,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
     .case-studies-hero-title {
         font-size: 2rem !important;
+        margin-top: 3rem !important;
         color: #ffffff !important;
     }
     
@@ -2870,6 +2881,7 @@ html {
     .page-hero-section h1,
     .page-hero-section .case-studies-hero-title {
         font-size: 2rem !important;
+        margin-top: 3rem !important;
         margin-bottom: 1rem;
         padding: 0 1rem;
     }
