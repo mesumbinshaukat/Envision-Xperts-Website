@@ -2939,16 +2939,18 @@ html {
     }
     
     .team-image {
-        height: 280px;
+        height: 300px;
         width: 100%;
         overflow: hidden;
+        position: relative;
     }
     
     .team-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center;
+        object-position: center top;
+        display: block;
     }
     
     .team-content {
@@ -3149,7 +3151,16 @@ html {
     }
     
     .team-image {
-        height: 250px;
+        height: 280px;
+        width: 100%;
+    }
+    
+    .team-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
     }
     
     .btn {
